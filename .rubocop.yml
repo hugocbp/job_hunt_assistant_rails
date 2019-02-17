@@ -3,3 +3,6 @@ Style/FrozenStringLiteralComment:
 
 Style/StringLiterals:
   Enabled: false
+
+Metrics/LineLength:
+  Enabled: false

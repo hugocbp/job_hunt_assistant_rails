@@ -4,7 +4,6 @@ FactoryBot.define do
     sequence(:company) { |n| "Company #{n}" }
     sequence(:description) { |n| "Some description #{n}" }
     technologies { "Ruby on Rails, React" }
+    user
   end
 end
-
-
