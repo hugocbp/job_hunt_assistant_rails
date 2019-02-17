@@ -9,13 +9,13 @@
     "bootstrap": "^4.3.1",
     "jquery": "^3.3.1",
     "popper.js": "^1.14.7",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.15",
+    "@fortawesome/free-regular-svg-icons": "^5.7.2",
+    "@fortawesome/free-solid-svg-icons": "^5.7.2"
   },
   "version": "0.1.0",
   "devDependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.15",
-    "@fortawesome/free-regular-svg-icons": "^5.7.2",
-    "@fortawesome/free-solid-svg-icons": "^5.7.2",
     "webpack": "^4.29.4",
     "webpack-dev-server": "^3.1.14"
   }
