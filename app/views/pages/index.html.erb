@@ -1,7 +1,40 @@
-<div class="card text-center">
-  <div class="card-body pt-5 pb-5">
+<div class="card text-center border-0 m-5">
+  <div class="card-body p-5">
     <h1 class="card-title mt-3">Your personal assistant to find a job!</h5>
     <p class="card-text mt-4">Use JSA to help you find, organize and manage the job positions you are interested in.</p>
-    <a href="#" class="btn btn-primary btn-outline">Start now</a>
+    <%= link_to 'Start now', new_user_registration_path, class: "btn btn-lg btn-outline-primary mt-5" %>
   </div>
+
+</div>
+
+<div class="row">
+	<div class="col-sm">
+		<div class="card text-center border-0">
+			<div class="card-body">
+				<i class="display-4 far fa-plus-square m-4"></i>
+				<h5 class="card-title">Add companies</h5>
+				<p class="card-text">Add different companies and office locations and see the map and Glassdoor rates</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-sm">
+		<div class="card text-center border-0">
+			<div class="card-body">
+				<i class="display-4 far fa-heart m-4"></i>
+				<h5 class="card-title">Work with what you love</h5>
+				<p class="card-text">List all technologies, programming languages and stacks from the different positions to filter easily for the positions with the ones you prefer</p>
+			</div>
+		</div>
+	</div>	
+
+	<div class="col-sm">
+		<div class="card text-center border-0">
+			<div class="card-body">
+				<i class="display-4 fas fa-tasks m-4"></i>
+				<h5 class="card-title">Keep track</h5>
+				<p class="card-text">Easily mark positions as interested, applied, interviewed, offered / declined, abandoned to have an overview of the job hunt process</p>
+			</div>
+		</div>
+	</div>		
 </div>
