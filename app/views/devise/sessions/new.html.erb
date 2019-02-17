@@ -1,6 +1,9 @@
 <div class="card border-dark mb-3 m-auto auth-card">
   <div class="card-header">Log in</div>
   <div class="card-body text-dark">
+			<div class="alert alert-info" role="alert">
+				For dummy data: <br>email: test@test.com <br>password: 123123123
+			</div>
 			<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 				<div class="form-group">
 					<%= f.label :email %><br />
