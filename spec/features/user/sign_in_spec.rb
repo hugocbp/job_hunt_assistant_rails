@@ -1,10 +1,8 @@
 require 'rails_helper'
 
 describe "Signing in" do
-	before do
-		User.create({ email: "test@test.com", password: "123123123" })
-	end
-	
+	let(:user) { FactoryBot.create(:user) }
+
 	context "with correct credentials" do
 		it "authenticates the user" do
 			visit root_url
@@ -12,8 +10,8 @@ describe "Signing in" do
 			click_link "Log In"
 
 			within("#new_user") do
-				fill_in "Email", with: "test@test.com"
-				fill_in "Password", with: "123123123"
+				fill_in "Email", with: user.email
+				fill_in "Password", with: user.password
 			end
 
 			click_button "Log in"
