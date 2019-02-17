@@ -2,10 +2,6 @@
   "name": "job_search_assistant",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.15",
-    "@fortawesome/free-brands-svg-icons": "^5.7.2",
-    "@fortawesome/free-regular-svg-icons": "^5.7.2",
-    "@fortawesome/free-solid-svg-icons": "^5.7.2",
     "@rails/actioncable": "^6.0.0-alpha",
     "@rails/activestorage": "^6.0.0-alpha",
     "@rails/ujs": "^6.0.0-alpha",
@@ -18,7 +14,6 @@
   "version": "0.1.0",
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.7.2",
-    "@fortawesome/fontawesome-free-webfonts": "^1.0.9",
     "webpack": "^4.29.4",
     "webpack-dev-server": "^3.1.14"
   }

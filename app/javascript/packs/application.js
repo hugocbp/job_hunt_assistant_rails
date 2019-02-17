@@ -8,6 +8,4 @@ require("turbolinks").start();
 require("@rails/activestorage").start();
 require("channels");
 require("bootstrap");
-require("@fortawesome/fontawesome-free-webfonts");
-require("@fortawesome/fontawesome-free-webfonts/css/fa-solid.css");
-require("@fortawesome/fontawesome-free-webfonts/css/fa-regular.css");
+require("@fortawesome/fontawesome-free/js/all");
