@@ -13,7 +13,7 @@
 					<td><%= tech.name %></td>
 					<td>
 						<%= link_to 'Edit', edit_technology_path(tech), class: 'btn btn-sm btn-outline-primary' %>
-						<a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
+						<%= link_to 'Delete', technology_path(tech), method: :delete, class: 'btn btn-sm btn-outline-danger', data: { confirm: 'Are you sure?' } %>
 					</td>
 				</tr>
 			<% end %>

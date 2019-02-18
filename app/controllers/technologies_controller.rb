@@ -32,6 +32,12 @@ class TechnologiesController < ApplicationController
     end
   end
 
+  def destroy
+    @technology = current_user.technologies.find(params[:id])
+    @technology.destroy
+    redirect_to technologies_path, notice: 'Technology deleted'
+  end
+
   private
 
   def tech_params
