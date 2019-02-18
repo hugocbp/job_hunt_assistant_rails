@@ -1,0 +1,10 @@
+<%= form_for @technology do |f| %>
+	<%= render "shared/errors", object: @technology %>
+
+	<div class="form-group">
+		<%= f.label 'Name' %>
+		<%= f.text_field :name, class: 'form-control' %>
+	</div>
+
+	<%= f.submit class: 'btn btn-outline-primary btn-block' %>
+<% end %>
