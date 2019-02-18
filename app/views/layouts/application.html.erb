@@ -10,62 +10,18 @@
   </head>
 
   <body>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-			<div class="container">
-				<%= link_to 'Job Search Assistant', root_path, class: "navbar-brand" %>
-				<%# <a class="navbar-brand" href="#">Job Search Assistant</a> %>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+		<%= render 'layouts/navbar' %>
 
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav mr-auto">
-					</ul>
-					<ul class="navbar-nav">
-						<%- if user_signed_in? %>
-							<li class="nav-item pr-5">
-								<%= link_to 'New Listing', new_listing_path, class: 'btn btn-large btn-light' %>
-							</li>
-							<li class="nav-item dropdown">
-								<a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									<%= current_user.email %>
-								</a>
-								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-								</div>
-							</li>
-						<% else %>
-							<li class="nav-item">
-								<%= link_to 'Log In', new_user_session_path, class: "nav-link active" %>
-							</li>
-							<li class="nav-item">
-								<%= link_to 'Sign Up', new_user_registration_path, class: "nav-link active" %>
-							</li>
-						<% end %>
-					</ul>					
-				</div>
-			</div>
-		</nav>
+		<% if current_user %>
+			<%= render 'layouts/action_menu' %>
+		<% end %>
 
-		<div class="container mt-2">
-			<%- if notice %>
-				<div class="alert alert-success" role="alert">
-					<span><%= notice %></span>
-					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-			<%- elsif alert %>
-				<div class="alert alert-danger" role="alert">
-					<span><%= alert %></span>
-					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>				
-				</div>
-			<% end %>
-		</div>
+		<%= render 'layouts/flash_messages' %>
+
 		<div class="container">
 			<%= yield %>
 		</div>
+
+		<%= render 'layouts/footer' %>
   </body>
 </html>

@@ -1,0 +1,17 @@
+<div class="container mt-2">
+	<%- if notice %>
+		<div class="alert alert-success" role="alert">
+			<span><%= notice %></span>
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+	<%- elsif alert %>
+		<div class="alert alert-danger" role="alert">
+			<span><%= alert %></span>
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>				
+		</div>
+	<% end %>
+</div>
