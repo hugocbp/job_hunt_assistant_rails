@@ -4,7 +4,6 @@ class CreateListings < ActiveRecord::Migration[6.0]
       t.string :title
       t.string :company
       t.text :description
-      t.text :technologies
       t.references :user, foreign_key: true
 
       t.timestamps

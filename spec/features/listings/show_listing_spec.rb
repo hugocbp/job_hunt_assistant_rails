@@ -11,6 +11,5 @@ describe 'Listing#show' do
     expect(page).to have_content listing.title
     expect(page).to have_content listing.company
     expect(page).to have_content listing.description
-    expect(page).to have_content listing.technologies
   end
 end

@@ -13,7 +13,6 @@ describe 'Creating a new listing' do
     fill_in 'listing_title', with: 'New test listing'
     fill_in 'listing_company', with: 'Test Company'
     fill_in 'listing_description', with: 'Dummy description for new listing'
-    fill_in 'listing_technologies', with: 'Test Tech 1, Test Framework 1'
 
     click_button 'Create Listing'
 

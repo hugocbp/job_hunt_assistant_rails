@@ -10,20 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_18_190548) do
+ActiveRecord::Schema.define(version: 2019_02_18_215313) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "listing_teches", force: :cascade do |t|
+    t.bigint "listings_id"
+    t.bigint "technologies_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["listings_id"], name: "index_listing_teches_on_listings_id"
+    t.index ["technologies_id"], name: "index_listing_teches_on_technologies_id"
+  end
 
   create_table "listings", force: :cascade do |t|
     t.string "title"
     t.string "company"
     t.text "description"
-    t.text "technologies"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_listings_on_user_id"
+  end
+
+  create_table "requirements", force: :cascade do |t|
+    t.bigint "technology_id"
+    t.bigint "listing_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["listing_id"], name: "index_requirements_on_listing_id"
+    t.index ["technology_id"], name: "index_requirements_on_technology_id"
   end
 
   create_table "technologies", force: :cascade do |t|
@@ -51,6 +68,10 @@ ActiveRecord::Schema.define(version: 2019_02_18_190548) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "listing_teches", "listings", column: "listings_id"
+  add_foreign_key "listing_teches", "technologies", column: "technologies_id"
   add_foreign_key "listings", "users"
+  add_foreign_key "requirements", "listings"
+  add_foreign_key "requirements", "technologies"
   add_foreign_key "technologies", "users"
 end

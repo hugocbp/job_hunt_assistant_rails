@@ -17,8 +17,7 @@ end
 	user.listings.create!({
 		title: "Listing #{i}",
 		company: "Company #{i}",
-		description: "Some testing text for sample listing #{i}",
-		technologies: user.technologies[rand(user.technologies.count)]
+		description: "Some testing text for sample listing #{i}"
 	})
 end
 
