@@ -12,5 +12,15 @@ FactoryBot.define do
         create_list(:listing, evaluator.listings_count, user: user)
       end
     end
+
+    factory :user_with_technologies do
+      transient do
+        technologies_count { 5 }
+      end
+
+      after(:create) do |user, evaluator|
+        create_list(:technology, evaluator.technologies_count, user: user)
+      end
+    end
   end
 end
