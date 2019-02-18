@@ -31,7 +31,7 @@ class ListingsController < ApplicationController
     if @listing.save
       redirect_to @listing, notice: 'Listing created'
     else
-      render :new
+      render :new, alert: 'Listing not created. Invalid data'
     end
   end
 

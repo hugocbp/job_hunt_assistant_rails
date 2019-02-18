@@ -1,33 +1,31 @@
 require 'rails_helper'
 
-describe 'Listing#new' do
+describe 'Creating a new listing' do
   let(:user) { FactoryBot.create(:user) }
-  
-  context 'with a logged in user' do
-    it 'displays the new listing form' do
-      sign_in user
+  before(:each) { sign_in user }
 
-      visit new_listing_path
+  it 'saves the listing and show its details' do
+    visit listings_url
 
-      expect(page).to have_content "Create a new listing"
-    end
+    click_link 'New Listing'
+    expect(current_path).to eq(new_listing_path)
 
-    it 'creates a new listing' do
-      sign_in user
+    fill_in 'listing_title', with: 'New test listing'
+    fill_in 'listing_company', with: 'Test Company'
+    fill_in 'listing_description', with: 'Dummy description for new listing'
+    fill_in 'listing_technologies', with: 'Test Tech 1, Test Framework 1'
 
-      visit new_listing_path
-      expect(page).to have_content "Create a new listing"
+    click_button 'Create Listing'
 
-      within("#new_listing") do
-        fill_in "listing_title", with: "Test Listing"
-        fill_in "listing_company", with: "Some sample company"
-        fill_in "listing_technologies", with: "Ruby on Rails"
-        fill_in "listing_description", with: "Some random description"
-      end
+    expect(current_path).to eq(listing_path(Listing.last))
+    expect(page).to have_content 'New test listing'
+    expect(page).to have_content 'Listing created'
+  end
 
-      click_button "Create Listing"
+  it 'does not save if the listing is invalid' do
+    visit new_listing_path
 
-      expect(page).to have_content "Create a new listing"
-    end
+    expect { click_button 'Create Listing' }.not_to change(Listing, :count)
+    expect(page).to have_content("Error!")
   end
 end

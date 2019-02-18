@@ -1,4 +1,6 @@
 	<%= form_for @listing do |f| %>
+		<%= render "shared/errors", object: @listing %>
+
 		<div class="form-group">
 			<%= f.label "Title" %>
 			<%= f.text_field :title , class: "form-control"%>

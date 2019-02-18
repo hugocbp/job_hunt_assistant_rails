@@ -7,8 +7,16 @@
   max-width: 90%;
 }
 
+.listing-form {
+  max-width: 95%;
+}
+
 @media screen and (min-width: 769px) {
   .auth-card {
     max-width: 40%;
+  }
+
+  .listing-form {
+    max-width: 60%;
   }
 }
