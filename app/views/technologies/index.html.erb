@@ -1,5 +1,22 @@
-<ul>
-	<% @technologies.each do |tech| %>
-		<li><%= tech.name %></li>
-	<% end %>
-</ul>
+<div class="tech-table mx-auto">
+	<h2 class="my-4">Your Technologies</h2>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Name</th>
+				<th scope="col">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @technologies.each do |tech| %>
+				<tr>
+					<td><%= tech.name %></td>
+					<td>
+						<%= link_to 'Edit', edit_technology_path(tech), class: 'btn btn-sm btn-outline-primary' %>
+						<a href="#" class="btn btn-sm btn-outline-danger">Delete</a>
+					</td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

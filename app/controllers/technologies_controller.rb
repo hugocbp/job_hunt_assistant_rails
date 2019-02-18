@@ -19,6 +19,19 @@ class TechnologiesController < ApplicationController
     end
   end
 
+  def edit
+    @technology = current_user.technologies.find(params[:id])
+  end
+
+  def update
+    @technology = current_user.technologies.find(params[:id])
+    if @technology.update(tech_params)
+      redirect_to technologies_path, notice: 'Technology update'
+    else
+      render :edit
+    end
+  end
+
   private
 
   def tech_params
