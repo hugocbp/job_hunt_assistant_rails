@@ -1,8 +1,7 @@
 Rails.application.routes.draw do 
   devise_for :users
 	
-	get 'listings', to: "listings#index"
-	get 'listings/:id', to: "listings#show", as: 'listing'
+	resources :listings
 
   root 'pages#index'
 end

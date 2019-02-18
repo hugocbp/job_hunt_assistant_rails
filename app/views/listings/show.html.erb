@@ -3,3 +3,6 @@
 
 <p><%= @listing.description %></p>
 <p><%= @listing.technologies %></p>
+
+<%= link_to 'Edit', edit_listing_path(@listing), class: 'btn btn-outline-primary' %>
+<%= link_to 'Delete', @listing, method: :delete, class: 'btn btn-danger btn-large', data: { confirm: 'Are you sure?' } %>
