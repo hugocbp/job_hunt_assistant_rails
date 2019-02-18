@@ -6,5 +6,7 @@ class CreateRequirements < ActiveRecord::Migration[6.0]
 
       t.timestamps
     end
+
+    add_index :requirements, [:technology_id, :listing_id], unique: true
   end
 end

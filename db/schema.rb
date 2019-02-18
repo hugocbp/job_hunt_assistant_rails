@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 2019_02_18_215313) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["listing_id"], name: "index_requirements_on_listing_id"
+    t.index ["technology_id", "listing_id"], name: "index_requirements_on_technology_id_and_listing_id", unique: true
     t.index ["technology_id"], name: "index_requirements_on_technology_id"
   end
 

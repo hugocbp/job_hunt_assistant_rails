@@ -1,0 +1,8 @@
+<%= @technology.name %>
+
+<h3>Required on:</h3>
+<ul>
+	<% @technology.requirements.each do |requirement| %>
+		<li><%= link_to requirement.listing.title, listing_path(requirement.listing) %></li>
+	<% end %>
+</ul>

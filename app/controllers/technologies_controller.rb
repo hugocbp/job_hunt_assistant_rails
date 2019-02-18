@@ -5,6 +5,10 @@ class TechnologiesController < ApplicationController
     @technologies = current_user.technologies
   end
 
+  def show
+    @technology = current_user.technologies.find(params[:id])
+  end
+
   def new
     @technology = current_user.technologies.new
   end

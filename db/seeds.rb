@@ -14,10 +14,19 @@ user = User.first
 end
 
 5.times do |i|
-	user.listings.create!({
+	user.listings.create({
 		title: "Listing #{i}",
 		company: "Company #{i}",
-		description: "Some testing text for sample listing #{i}"
+    description: "Some testing text for sample listing #{i}"
 	})
 end
 
+15.times do
+  listing = Listing.find(rand(Listing.count) + 1)
+  tech = Technology.find(rand(Technology.count) + 1)
+  
+  if Requirement.where(listing: listing, technology: tech).empty?
+    r = Requirement.new({listing: listing, technology: tech})
+    listing.requirements << r
+  end
+end
