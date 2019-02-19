@@ -4,7 +4,7 @@ FactoryBot.define do
     user
   end
 
-  factory :technology_with_listings, parent: :technology do |tech|
+  factory :technology_with_listings, parent: :technology do
     requirements { build_list :requirement, 3 }
   end
 end

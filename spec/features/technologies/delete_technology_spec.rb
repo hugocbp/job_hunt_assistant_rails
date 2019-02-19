@@ -1,11 +1,10 @@
 require 'rails_helper'
 
 describe 'Deleting a technology' do
-  let(:user) { FactoryBot.create(:user_with_technologies, technologies_count: 1)}
-  before(:each) { sign_in user }
+  let(:tech) { FactoryBot.create(:technology_with_listings) }
+  before(:each) { sign_in tech.user }
 
   it 'destroys the technology and displays the tech list' do
-    tech = user.technologies.first
     expect(Technology.count).to eq 1
     
     visit technologies_path

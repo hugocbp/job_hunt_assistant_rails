@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'Deleting a listing' do
-  let(:listing) { FactoryBot.create(:listing) }
+  let(:listing) { FactoryBot.create(:listing_with_technologies) }
   before(:each) { sign_in listing.user }
 
   it 'destroys the listing and shows the listings' do
