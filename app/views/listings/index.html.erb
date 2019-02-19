@@ -1,28 +1,31 @@
-<h1 class="display-4 mb-4 mt-4">Your Listings</h1>
-
-<%- if @listings.empty? %>
-	<p>You don't have any listings at this moment...</p>
-<% else %>
-	<table class="table mt-5">
-		<thead>
-			<tr>
-				<th scope="col">#</th>
-				<th scope="col">Title</th>
-				<th scope="col">Company</th>
-				<th scope="col">Description</th>
-				<th scope="col">Status</th>
-			</tr>
-		</thead>
-		<tbody>
-			<% @listings.each_with_index do |listing, i| %>
-				<tr>
-					<th scope="row"><%= i + 1 %></th>
-					<td><%= link_to listing.title, listing %></td>
-					<td><%= listing.company %></td>
-					<td><%= listing.description %></td>
-					<td>Interested</td>
-				</tr>
-			<% end %>
-		</tbody>
-	</table>
-<% end %>
+<div class="mx-auto">
+  <h2 class="my-4">Your Listings</h2>
+  <%- if @listings.empty? %>
+    <p>You don't have any listings at this moment...</p>
+  <% else %>
+    <table class="table">
+      <thead>
+        <thead>
+          <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Company</th>
+            <th scope="col">Description</th>
+            <th scope="col">Technologies</th>
+          </tr>
+        </thead>
+      </thead>
+      <tbody>
+        <% @listings.each_with_index do |listing, i| %>
+          <tr>
+            <td><%= link_to listing.title, listing %></td>
+            <td><%= listing.company %></td>
+            <td><%= listing.description %></td>
+            <td>
+              <%= technologies_to_link_string(listing) %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>
