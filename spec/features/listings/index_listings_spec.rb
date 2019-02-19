@@ -8,11 +8,10 @@ describe 'Listing#index' do
 
     visit listings_path
     
+    expect(Listing.all.size).to eq 3
     expect(page).to have_content(user.listings[0].title)
     expect(page).to have_content(user.listings[1].title)
     expect(page).to have_content(user.listings[2].title)
-    expect(page).to have_content(user.listings[3].title)
-    expect(page).to have_content(user.listings[4].title)
   end
   
   it 'links to the individual listing' do

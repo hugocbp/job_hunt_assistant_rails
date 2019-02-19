@@ -40,7 +40,7 @@ class CompaniesController < ApplicationController
   def destroy
     @company = current_user.companies.find(params[:id])
     @company.destroy
-    redirect_to companies_path, notice: 'Company deleted@'
+    redirect_to companies_path, notice: 'Company deleted'
   end
 
   private

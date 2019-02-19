@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_19_002451) do
+ActiveRecord::Schema.define(version: 2019_02_19_181523) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,11 +34,12 @@ ActiveRecord::Schema.define(version: 2019_02_19_002451) do
 
   create_table "listings", force: :cascade do |t|
     t.string "title"
-    t.string "company"
     t.text "description"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "company_id"
+    t.index ["company_id"], name: "index_listings_on_company_id"
     t.index ["user_id"], name: "index_listings_on_user_id"
   end
 
@@ -80,6 +81,7 @@ ActiveRecord::Schema.define(version: 2019_02_19_002451) do
   add_foreign_key "companies", "users"
   add_foreign_key "listing_teches", "listings", column: "listings_id"
   add_foreign_key "listing_teches", "technologies", column: "technologies_id"
+  add_foreign_key "listings", "companies"
   add_foreign_key "listings", "users"
   add_foreign_key "requirements", "listings"
   add_foreign_key "requirements", "technologies"

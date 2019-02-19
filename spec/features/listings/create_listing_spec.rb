@@ -5,19 +5,23 @@ describe 'Creating a new listing' do
   before(:each) { sign_in user }
 
   it 'saves the listing and show its details' do
+    company = FactoryBot.create(:company, user: user)
+    expect(Company.all.size).to eq 1
+    
     visit listings_url
-
+    
     click_link 'New Listing'
     expect(current_path).to eq(new_listing_path)
 
     fill_in 'listing_title', with: 'New test listing'
-    fill_in 'listing_company', with: 'Test Company'
+    select company.name, from: 'listing_company_id'
     fill_in 'listing_description', with: 'Dummy description for new listing'
 
     click_button 'Create Listing'
 
     expect(current_path).to eq(listing_path(Listing.last))
     expect(page).to have_content 'New test listing'
+    expect(page).to have_content company.name
     expect(page).to have_content 'Listing created'
   end
 

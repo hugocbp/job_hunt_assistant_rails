@@ -11,6 +11,7 @@ class ListingsController < ApplicationController
   
   def edit
     @listing = current_user.listings.find(params[:id])
+    @companies = current_user.companies
   end
 
   def update
@@ -24,6 +25,7 @@ class ListingsController < ApplicationController
 
   def new
     @listing = current_user.listings.new
+    @companies = current_user.companies
   end
   
   def create
@@ -44,6 +46,6 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:title, :company, :description, :technologies)
+    params.require(:listing).permit(:title, :company_id, :description, :technologies)
   end
 end

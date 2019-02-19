@@ -3,14 +3,17 @@ FactoryBot.define do
     email { "test@test.com" }
     password  { "123123123" }
 
-    factory :user_with_listings do
-      transient do
-        listings_count { 5 }
-      end
+    # factory :user_with_listings do
+    #   transient do
+    #     listings_count { 5 }
+    #   end
 
-      after(:create) do |user, evaluator|
-        create_list(:listing, evaluator.listings_count, user: user)
-      end
+    #   after(:create) do | evaluator|
+    #     create_list(:listing, evaluator.listings_count)
+    #   end
+    # end
+    factory :user_with_listings, parent: :user do
+      listings { build_list :listing, 3 }
     end
 
     factory :user_with_technologies do

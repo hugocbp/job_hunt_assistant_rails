@@ -9,7 +9,7 @@ describe 'A listing' do
   end
 
   it 'requires a company' do
-    listing.company = ""
+    listing.company = nil
     expect(listing.valid?).to be_falsey
   end
 end
