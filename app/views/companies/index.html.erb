@@ -1,6 +1,6 @@
 <h1>Your Companies</h1>
 <ul>
   <% @companies.each do |company| %>
-    <li><%= company.name %></li>
+    <li><%= link_to company.name, company %></li>
   <% end %>
 </ul>
