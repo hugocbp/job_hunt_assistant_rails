@@ -13,6 +13,10 @@ user = User.first
   user.technologies.create!({ name: tech })
 end
 
+['Microsoft', 'Apple', 'Facebook', 'Amazon', 'Netflix'].each do |company|
+  user.companies.create!({ name: company })
+end
+
 5.times do |i|
 	user.listings.create({
 		title: "Listing #{i}",
