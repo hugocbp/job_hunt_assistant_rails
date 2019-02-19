@@ -9,7 +9,7 @@ describe 'Listing companies' do
 
     visit companies_path
 
-    expect(page).to have_content "Your listed companies"
+    expect(page).to have_content "Your Companies"
     expect(page).to have_content user.companies.first.name
     expect(page).to have_content user.companies.last.name
   end

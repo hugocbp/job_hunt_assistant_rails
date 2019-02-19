@@ -15,6 +15,8 @@ describe "Signing in" do
       end
 
       click_button "Log in"
+      expect(current_path).to eq dashboard_path
+      expect(page).to have_content "Your Dashboard"
       expect(page).to have_content "Signed in successfully"
     end
   end
