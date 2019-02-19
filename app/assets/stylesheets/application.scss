@@ -15,6 +15,15 @@
   max-width: 40%;
 }
 
+.alert-float {
+  position: fixed;
+  top: 75px;
+  right: 25px;
+  // min-width: 200px;
+  // max-width: 400px;
+  z-index: 9999;
+}
+
 @media screen and (min-width: 769px) {
   .auth-card {
     max-width: 40%;

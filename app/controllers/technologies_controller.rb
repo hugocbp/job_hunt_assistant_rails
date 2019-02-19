@@ -30,7 +30,7 @@ class TechnologiesController < ApplicationController
   def update
     @technology = current_user.technologies.find(params[:id])
     if @technology.update(tech_params)
-      redirect_to technologies_path, notice: 'Technology update'
+      redirect_to technologies_path, notice: 'Technology updated'
     else
       render :edit
     end

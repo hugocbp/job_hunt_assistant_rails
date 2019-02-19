@@ -30,10 +30,11 @@ class ListingsController < ApplicationController
   
   def create
     @listing = current_user.listings.new(listing_params)
+    @companies = current_user.companies # Re-render in case of errors
     if @listing.save
       redirect_to @listing, notice: 'Listing created'
     else
-      render :new, alert: 'Listing not created. Invalid data'
+      render :new
     end
   end
 

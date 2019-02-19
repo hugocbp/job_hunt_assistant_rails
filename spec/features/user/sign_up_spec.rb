@@ -16,7 +16,7 @@ describe "Signing up" do
 			end
 			
 			click_button "Sign up"
-			expect(page).to have_content "Welcome! You have signed up successfully"
+			expect(page).to have_content "Account created"
 		end
 	end
 end
