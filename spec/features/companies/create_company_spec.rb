@@ -21,4 +21,13 @@ describe 'Creating a company' do
       expect(page).to have_content 'Dummy Company'
     end
   end
+
+  context 'with invalid data' do
+    it 'does not save if the company is invalid' do
+      visit new_company_path
+
+      expect { click_button 'Create Company' }.not_to change(Company, :count)
+      expect(page).to have_content("Error!")
+    end
+  end
 end
