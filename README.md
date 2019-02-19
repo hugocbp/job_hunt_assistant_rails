@@ -1,24 +1,30 @@
-# README
+# Job Search Assistant
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A webapplication built with Ruby on Rails 6.0.0.beta1 that assists with job
+hunting opportunities. The app allows the user to create listings with the
+technologies required, the office location and description and it tries to find
+the Glassdoor rate for the office, displays the map and allows the user to set
+the status of his/her application to the position.
 
-Things you may want to cover:
+## Live demo
 
-* Ruby version
+Demo app live at [Heroku](http://hugocbp-job-search-assistant.herokuapp.com)
+(might take a while to start for the first time).
 
-* System dependencies
+## Instructions to run
 
-* Configuration
+1. Download
+2. Run `bundle`
+3. Run `yarn install`
+4. Start Postgres server
+5. Run `rails db:migrate`
+6. (OPTIONAL) Seed the database with `rails db:seed`
+7. Start the server with `rails s`
+8. Access the application at `http://localhost:3000`
 
-* Database creation
+## Tests
 
-* Database initialization
+To test, run `bundle exec rspec` on the root directory.
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Code coverage can be seen by opening `coverage/index.html` that is generated
+after a run of all the specs at least once.
