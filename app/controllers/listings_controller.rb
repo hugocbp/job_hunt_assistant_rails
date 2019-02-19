@@ -40,7 +40,7 @@ class ListingsController < ApplicationController
   def destroy
     @listing = current_user.listings.find(params[:id])
     @listing.destroy
-    redirect_to listings_path, alert: "Listing deleted"
+    redirect_to listings_path, notice: "Listing deleted"
   end
 
   private

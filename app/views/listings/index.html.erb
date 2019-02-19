@@ -18,7 +18,7 @@
         <% @listings.each_with_index do |listing, i| %>
           <tr>
             <td><%= link_to listing.title, listing %></td>
-            <td><%= listing.company %></td>
+            <td><%= listing.company.name %></td>
             <td><%= listing.description %></td>
             <td>
               <%= technologies_to_link_string(listing) %>

@@ -20,7 +20,7 @@ end
 5.times do |i|
 	user.listings.create({
 		title: "Listing #{i}",
-		company: "Company #{i}",
+		company: Company.find(rand(Company.all.size) + 1),
     description: "Some testing text for sample listing #{i}"
 	})
 end

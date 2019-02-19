@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :company do
-    sequence(:name) { |n| "Test Listing #{n}" }
+    sequence(:name) { |n| "Test Company #{n}" }
     user
   end
 
