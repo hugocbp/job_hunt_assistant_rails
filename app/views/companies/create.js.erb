@@ -1,0 +1,1 @@
+$('#listing_company_id').html("<%= escape_javascript collection_select(:listing, :company_id, @companies, :id, :name, { prompt: true }, { required: true, class: 'selectize'}) %>");

@@ -9,3 +9,5 @@ require("@rails/activestorage").start();
 require("channels");
 require("bootstrap");
 require("../src/fontawesome");
+require("../src/selectize");
+require("../src/app");

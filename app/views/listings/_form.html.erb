@@ -1,4 +1,4 @@
-	<%= form_for @listing do |f| %>
+<%= form_for @listing, remote: true do |f| %>
   <%= render "shared/errors", object: @listing %>
   <div class="form-group">
     <%= f.label "Title" %>
@@ -6,13 +6,7 @@
   </div>
   <div class="form-group">
     <%= f.label "Company / Location" %>
-    <% if @companies.blank? %>
-      <div class="alert alert-warning" role="alert">
-        You don't have any companies created yet... To create a listing, first <%= link_to 'create a company', new_company_path, class: 'alert-link' %>
-      </div>
-    <% else %>
-      <%= collection_select(:listing, :company_id, @companies, :id, :name, { prompt: true }, { required: true, class: 'form-control'}) %>
-    <% end %>
+    <%= collection_select(:listing, :company_id, @companies, :id, :name, { prompt: true }, { required: true, class: 'selectize'}) %>
   </div>
   <div class="form-group">
     <%= f.label "Description" %>

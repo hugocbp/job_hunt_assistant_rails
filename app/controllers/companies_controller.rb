@@ -16,10 +16,14 @@ class CompaniesController < ApplicationController
   def create
     @company = current_user.companies.new(company_params)
 
-    if @company.save
-      redirect_to @company, notice: 'Company created'
-    else
-      render :new
+    respond_to do |format|
+      if @company.save
+        format.html { redirect_to @company, notice: 'Company created' } 
+        format.json { render json: { id: @company.id, name: @company.name } }
+      else
+        format.html { render :new }
+        format.json { render json: { errors: @company.errors.full_messages } }
+      end
     end
   end
 
