@@ -1,4 +1,36 @@
-<h1><%= @listing.title %> at <span class="text-muted"><%= @listing.company.name %></span></h1>
-<p><%= @listing.description %></p>
-<%= link_to 'Edit', edit_listing_path(@listing), class: 'btn btn-outline-primary' %>
-<%= link_to 'Delete', @listing, method: :delete, class: 'btn btn-danger btn-large', data: { confirm: 'Are you sure?' } %>
+<h2 class="display-3  my-4">
+  <%= @listing.title %>
+</h2>
+<h3>
+  <%= link_to @listing.company.name, @listing.company %>
+  <span class="text-muted pl-4"> <i class="fas fa-chart-line"></i> 4.5 </span>
+</h3>
+
+<div class="row">
+  <div class="col-8">
+    <article class="py-2 mt-3">
+      <p><%= @listing.description %></p>
+    </article>
+  </div>
+
+  <div class="col-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Requirements</h5>
+
+        <ul>
+          <% @listing.requirements.each do |req| %>
+            <li><%= link_to req.technology.name, req.technology, class: 'card-link'%></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="mt-5">
+  <%= link_to 'Edit', edit_listing_path(@listing), class: 'btn btn-outline-primary' %>
+
+  <%= link_to 'Delete', @listing, method: :delete, class: 'btn btn-danger btn-large', data: { confirm: 'Are you sure?' } %>
+</div>
