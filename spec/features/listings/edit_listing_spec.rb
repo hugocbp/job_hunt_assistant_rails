@@ -1,13 +1,13 @@
 require 'rails_helper'
 
-describe 'Editing a listing' do
+describe 'Editing a listing', javascript: true do
   
   let(:listing) { FactoryBot.create(:listing) }
   before(:each) { sign_in listing.user }
 
   it 'updates the listing and show the new listing details' do
     visit listing_url(listing)
-    
+
     expect(page).to have_content listing.title
 
     click_link 'Edit'
@@ -26,7 +26,7 @@ describe 'Editing a listing' do
 
   it 'fails to update if it is invalid' do
     visit edit_listing_path(listing)
-
+    
     fill_in 'listing_title', with: ''
 
     click_button 'Update Listing'

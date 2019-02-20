@@ -19,7 +19,7 @@ class CompaniesController < ApplicationController
     respond_to do |format|
       if @company.save
         format.html { redirect_to @company, notice: 'Company created' } 
-        format.json { render json: { id: @company.id, name: @company.name } }
+        format.json { render json: { value: @company.id, text: @company.name } }
       else
         format.html { render :new }
         format.json { render json: { errors: @company.errors.full_messages } }

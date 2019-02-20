@@ -1,7 +1,7 @@
 $(document).on("turbolinks:load", function() {
   let $companies = $("select#listing_company_id").selectize({
-    valueField: "id",
-    labelField: "name",
+    selectOnTab: true,
+    createOnBlur: false,
     create: function(input, cb) {
       $.ajax({
         url: "/companies",
@@ -13,8 +13,9 @@ $(document).on("turbolinks:load", function() {
         success: function(res) {
           console.log(res);
           if (!res.errors) {
-            cb({ id: res.id, name: res.name });
+            cb({ value: res.value, text: res.text });
           }
+          cb();
         }
       });
     }

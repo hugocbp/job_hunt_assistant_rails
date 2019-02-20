@@ -11,11 +11,12 @@ class ListingsController < ApplicationController
   
   def edit
     @listing = current_user.listings.find(params[:id])
-    @companies = current_user.companies
+    @companies = current_user.companies.all
   end
 
   def update
     @listing = current_user.listings.find(params[:id])
+    @companies = current_user.companies # Re-render in case of errors
     if @listing.update(listing_params)
       redirect_to @listing, notice: 'Listing updated'
     else
