@@ -11,7 +11,7 @@ $(document).on("turbolinks:load", function() {
           company: { name: input }
         },
         success: function(res) {
-          console.log(res);
+          // console.log(res);
           if (!res.errors) {
             cb({ value: res.value, text: res.text });
           }

@@ -24,6 +24,10 @@ class CompaniesController < ApplicationController
         format.html { render :new }
         format.json { render json: { errors: @company.errors.full_messages } }
       end
+      
+    # Handle very fast tab insertions on form
+    rescue ActiveRecord::RecordNotUnique
+      format.json { render json: { message: "Company already created" } }
     end
   end
 

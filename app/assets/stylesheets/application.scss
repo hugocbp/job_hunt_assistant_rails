@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400");
-@import "../../../node_modules/bootstrap/scss/functions";
+@import "bootstrap/scss/functions";
 @import "variables";
-@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "bootstrap/scss/bootstrap.scss";
+@import "selectize/dist/css/selectize.css";
 
 .auth-card {
   max-width: 90%;

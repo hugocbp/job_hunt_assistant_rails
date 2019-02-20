@@ -20,16 +20,8 @@ ActiveRecord::Schema.define(version: 2019_02_19_181523) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_companies_on_name", unique: true
     t.index ["user_id"], name: "index_companies_on_user_id"
-  end
-
-  create_table "listing_teches", force: :cascade do |t|
-    t.bigint "listings_id"
-    t.bigint "technologies_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["listings_id"], name: "index_listing_teches_on_listings_id"
-    t.index ["technologies_id"], name: "index_listing_teches_on_technologies_id"
   end
 
   create_table "listings", force: :cascade do |t|
@@ -79,8 +71,6 @@ ActiveRecord::Schema.define(version: 2019_02_19_181523) do
   end
 
   add_foreign_key "companies", "users"
-  add_foreign_key "listing_teches", "listings", column: "listings_id"
-  add_foreign_key "listing_teches", "technologies", column: "technologies_id"
   add_foreign_key "listings", "companies"
   add_foreign_key "listings", "users"
   add_foreign_key "requirements", "listings"
