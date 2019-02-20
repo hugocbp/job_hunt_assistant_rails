@@ -1,22 +1,28 @@
 <div class="tech-table mx-auto">
-	<h2 class="my-4">Your Technologies</h2>
-	<table class="table">
-		<thead>
-			<tr>
-				<th scope="col">Name</th>
-				<th scope="col">Actions</th>
-			</tr>
-		</thead>
-		<tbody>
-			<% @technologies.each do |tech| %>
-				<tr>
-					<td><%= link_to tech.name, tech %></td>
-					<td>
-						<%= link_to 'Edit', edit_technology_path(tech), class: 'btn btn-sm btn-outline-primary' %>
-						<%= link_to 'Delete', technology_path(tech), method: :delete, class: 'btn btn-sm btn-outline-danger', data: { confirm: 'Are you sure?' } %>
-					</td>
-				</tr>
-			<% end %>
-		</tbody>
-	</table>
+  <h2 class="my-4">Your Technologies</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Count</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @technologies.each do |tech| %>
+        <tr>
+          <td><%= link_to tech.name, tech %></td>
+          <td>
+            <span class="badge badge-pill badge-primary">
+              <%= tech.requirements.size %>
+            </span>
+          </td>
+          <td>
+            <%= link_to 'Edit', edit_technology_path(tech), class: 'btn btn-sm btn-outline-primary' %>
+            <%= link_to 'Delete', technology_path(tech), method: :delete, class: 'btn btn-sm btn-outline-danger', data: { confirm: 'Are you sure?' } %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>

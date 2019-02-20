@@ -9,8 +9,10 @@ describe 'Listing technologies' do
     visit technologies_url
 
     tech = user.technologies
+    count = tech[0].requirements.size
 
     expect(page).to have_content tech.first.name
     expect(page).to have_content tech.last.name
+    expect(page).to have_content count
   end
 end

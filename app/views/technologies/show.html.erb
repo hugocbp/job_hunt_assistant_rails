@@ -1,4 +1,9 @@
-<h2 class="display-3 my-4"><%= @technology.name %></h2>
+<h4 class="display-3 my-4">
+  <span class="badge badge-pill badge-primary">
+    <%= @technology.requirements.size %>
+  </span>
+  <%= @technology.name %>
+</h4>
 
 <h3>Required on:</h3>
 <ul>
