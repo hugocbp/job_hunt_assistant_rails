@@ -9,5 +9,12 @@
     <%= f.label 'Office Address' %>
     <%= f.text_field :address, class: 'form-control' %>
   </div>
+
+  <% if @company.persisted? %>
+    <div class="form-group">
+      <%= f.label 'Company Rating (overrides automatic rating)' %>
+      <%= f.text_field :user_glassdoor_rate, class: 'form-control' %>
+    </div>
+  <% end %>
   <%= f.submit class: 'btn btn-block btn-outline-primary' %>
 <% end %>
