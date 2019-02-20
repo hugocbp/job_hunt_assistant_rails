@@ -73,7 +73,5 @@ ActiveRecord::Schema.define(version: 2019_02_19_181523) do
   add_foreign_key "companies", "users"
   add_foreign_key "listings", "companies"
   add_foreign_key "listings", "users"
-  add_foreign_key "requirements", "listings"
-  add_foreign_key "requirements", "technologies"
   add_foreign_key "technologies", "users"
 end
