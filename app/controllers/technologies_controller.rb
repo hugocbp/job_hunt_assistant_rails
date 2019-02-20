@@ -16,10 +16,18 @@ class TechnologiesController < ApplicationController
   def create
     @technology = current_user.technologies.new(tech_params)
 
-    if @technology.save
-      redirect_to technologies_path, notice: 'Technology created'
-    else
-      render :new
+    respond_to do |format|
+      if @technology.save
+        format.html { redirect_to technologies_path, notice: 'Technology created' }
+        format.json { render json: { value: @technology.id, text: @technology.name } }        
+      else
+        format.html { render :new }
+        format.json { render json: { errors: @technology.errors.full_messages } }
+      end
+      
+    # Handle very fast tab insertions on form
+    rescue ActiveRecord::RecordNotUnique
+      format.json { render json: { message: "Technology already created" } }
     end
   end
 

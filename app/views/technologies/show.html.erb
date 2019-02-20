@@ -2,9 +2,9 @@
 
 <h3>Required on:</h3>
 <ul>
-	<% @technology.requirements.each do |requirement| %>
-		<li>
-			<%= link_to requirement.listing.title, listing_path(requirement.listing) %> at <%= requirement.listing.company %>
-		</li>
-	<% end %>
+  <% @technology.requirements.each do |requirement| %>
+    <li>
+      <%= link_to requirement.listing.title, listing_path(requirement.listing) %> at <%= requirement.listing.company.name %>
+    </li>
+  <% end %>
 </ul>

@@ -9,6 +9,14 @@
     <%= collection_select(:listing, :company_id, @companies, :id, :name, { prompt: true }, { required: true, class: 'selectize'}) %>
   </div>
   <div class="form-group">
+    <%= f.fields_for :requirements do |requirement| %>
+      <%= requirement.label "Technologies Required / Desired" %>
+      <%= collection_select(:requirements, :technology_id,  @current_user.technologies, :id, :name,
+			  { prompt: true, include_blank: false, include_hidden: false }, 
+				{ required: false, class: 'selectize', multiple: true}) %>
+    <% end %>
+  </div>
+  <div class="form-group">
     <%= f.label "Description" %>
     <%= f.text_area :description , class: "form-control", rows: 10%>
   </div>

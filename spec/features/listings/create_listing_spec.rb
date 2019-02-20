@@ -7,8 +7,9 @@ describe 'Creating a new listing' do
   it 'saves the listing and show its details' do
     company = FactoryBot.create(:company, user: user)
     tech = FactoryBot.create(:technology, user: user)
+    tech2 = FactoryBot.create(:technology, user: user)
     expect(Company.all.size).to eq 1
-    expect(Technology.all.size).to eq 1
+    expect(Technology.all.size).to eq 2
     
     visit listings_url
     
@@ -17,6 +18,8 @@ describe 'Creating a new listing' do
 
     fill_in 'listing_title', with: 'New test listing'
     select company.name, from: 'listing_company_id'
+    select tech.name, from: 'requirements_technology_id'
+    select tech2.name, from: 'requirements_technology_id'
     fill_in 'listing_description', with: 'Dummy description for new listing'
 
     click_button 'Create Listing'

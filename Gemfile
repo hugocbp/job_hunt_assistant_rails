@@ -34,6 +34,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 	gem 'guard-rails', require: false
 	gem 'guard-rspec', require: false
+	gem "better_errors"
+  gem "binding_of_caller"
 end
 
 
