@@ -7,6 +7,7 @@ class CompaniesController < ApplicationController
 
   def show
     @company = current_user.companies.find(params[:id])
+    Scraper.update_rating(@company, "Vancouver")
   end
 
   def new

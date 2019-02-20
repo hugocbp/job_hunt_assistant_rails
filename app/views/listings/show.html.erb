@@ -3,7 +3,7 @@
 </h2>
 <h3>
   <%= link_to @listing.company.name, @listing.company %>
-  <span class="text-muted pl-4"> <i class="fas fa-chart-line"></i> 4.5 </span>
+  <span class="text-muted pl-4"> <i class="fas fa-chart-line"></i> <%= get_rating(@listing.company) %> </span>
 </h3>
 
 <div class="row">
