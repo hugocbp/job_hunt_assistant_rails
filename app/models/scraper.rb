@@ -10,7 +10,7 @@ class Scraper
     results = doc.xpath('//div[contains(text(), "Rating: ")]')
 
     if results.empty?
-      rating = "N/A"
+      rating = nil
     else 
       rating = (/Rating: \d.?\d?/).match(results.to_s)[0].sub("Rating: ", "")
     end

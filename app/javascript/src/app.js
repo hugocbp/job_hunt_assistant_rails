@@ -21,7 +21,7 @@ $(document).on("turbolinks:load", function() {
     }
   });
 
-  let $technologies = $("select#requirements_technology_id").selectize({
+  let $technologies = $("select#listing_technology_ids").selectize({
     selectOnTab: true,
     createOnBlur: false,
     create: function(input, cb) {

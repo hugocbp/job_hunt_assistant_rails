@@ -18,8 +18,8 @@ describe 'Creating a new listing' do
 
     fill_in 'listing_title', with: 'New test listing'
     select company.name, from: 'listing_company_id'
-    select tech.name, from: 'requirements_technology_id'
-    select tech2.name, from: 'requirements_technology_id'
+    select tech.name, from: 'listing_technology_ids'
+    select tech2.name, from: 'listing_technology_ids'
     fill_in 'listing_description', with: 'Dummy description for new listing'
 
     click_button 'Create Listing'
@@ -27,6 +27,8 @@ describe 'Creating a new listing' do
     expect(current_path).to eq(listing_path(Listing.last))
     expect(page).to have_content 'New test listing'
     expect(page).to have_content company.name
+    expect(page).to have_content tech.name
+    expect(page).to have_content tech2.name
     expect(page).to have_content 'Listing created'
   end
 

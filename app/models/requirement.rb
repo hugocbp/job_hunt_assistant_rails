@@ -1,4 +1,4 @@
 class Requirement < ApplicationRecord
-  belongs_to :technology, required: true
-  belongs_to :listing, required: true
+  belongs_to :technology, inverse_of: :listings
+  belongs_to :listing, inverse_of: :technologies
 end

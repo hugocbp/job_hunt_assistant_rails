@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2019_02_20_175011) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_technologies_on_name", unique: true
     t.index ["user_id"], name: "index_technologies_on_user_id"
   end
 
@@ -76,5 +77,7 @@ ActiveRecord::Schema.define(version: 2019_02_20_175011) do
   add_foreign_key "companies", "users"
   add_foreign_key "listings", "companies"
   add_foreign_key "listings", "users"
+  add_foreign_key "requirements", "listings"
+  add_foreign_key "requirements", "technologies"
   add_foreign_key "technologies", "users"
 end
