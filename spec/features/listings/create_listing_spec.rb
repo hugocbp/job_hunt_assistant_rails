@@ -32,6 +32,10 @@ describe 'Creating a new listing' do
     expect(page).to have_content 'Listing created'
   end
 
+  # TODO: Research how to test Selectize.js
+  xit 'creates a company directly from the list if it does not exists'
+  xit 'creates technologies directly from the list if it does not exists'
+
   it 'does not save if the listing is invalid' do
     visit new_listing_path
 

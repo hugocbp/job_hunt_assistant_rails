@@ -13,12 +13,14 @@ describe 'Creating a company' do
       expect(current_path).to eq(new_company_path)
 
       fill_in 'company_name', with: 'Dummy Company'
+      fill_in 'company_address', with: '123 Highway Ave'
       click_button 'Create Company'
 
       expect(Company.count).to eq 1
       expect(current_path).to eq(company_path(Company.last))
       expect(page).to have_content 'Company created'
       expect(page).to have_content 'Dummy Company'
+      expect(page).to have_content '123 Highway Ave'
     end
   end
 

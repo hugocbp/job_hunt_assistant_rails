@@ -15,11 +15,13 @@ describe 'Editing a company' do
       expect(current_path).to eq(edit_company_path(company))
 
       fill_in 'company_name', with: 'New Company Name'
+      fill_in 'company_address', with: 'New Company Address'
       click_button 'Update Company'
 
       expect(current_path).to eq(company_path(company))
       expect(page).to have_content "Company updated"
       expect(page).to have_content 'New Company Name'
+      expect(page).to have_content 'New Company Address'
       expect(page).not_to have_content company.name
     end
   end
