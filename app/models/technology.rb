@@ -4,5 +4,5 @@ class Technology < ApplicationRecord
   has_many :requirements, dependent: :destroy
   has_many :listings, -> { distinct }, through: :requirements
 
-  validates :name, length: { minimum: 2 }
+  validates :name, length: { minimum: 1 }
 end

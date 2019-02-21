@@ -1,39 +1,46 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-print "Creating user... "
+require 'faker'
+
+print "Creating test user... "
 User.create!(email: "test@test.com", password: "123123123")
 puts "done!"
 user = User.first
 
+print "Creating random users... "
+15.times do
+  print "."
+  User.create(email: Faker::Internet.email, password:  "123123123")
+end
+puts "done!"
+
 print "Creating technologies... "
-['React', 'Ruby on Rails', 'Elixir', 'Python', 'Django'].each do |tech|
-  user.technologies.create!({ name: tech })
+10.times do
+  print "."
+  user.technologies.create!({ name: Faker::ProgrammingLanguage.name })
 end
 puts "done!"
 
 print "Creating companies... "
-['Microsoft', 'Apple', 'Facebook', 'Amazon', 'Netflix'].each do |company|
-  user.companies.create!({ name: company })
+# ['Microsoft', 'Apple', 'Facebook', 'Amazon', 'Netflix']
+10.times do
+  print "."
+  user.companies.create!({ name: Faker::Company.name })
 end
 puts "done!"
 
-print "Creating listings... "
-10.times do |i|
+print "Creating listings...  "
+10.times do
+  print "."
 	user.listings.create({
-		title: "Listing #{i}",
+		title: Faker::Job.title,
 		company: Company.find(rand(Company.all.size) + 1),
-    description: "Some testing text for sample listing #{i}"
+    description: Faker::Lorem.paragraph(20)
 	})
 end
 puts "done!"
 
-print "Creating requirements... "
+print "Creating requirements...  "
 20.times do
+  print "."
   listing = Listing.find(rand(Listing.all.size) + 1)
   tech = Technology.find(rand(Technology.all.size) + 1)
   

@@ -19,7 +19,7 @@
           <tr>
             <td><%= link_to listing.title, listing %></td>
             <td><%= listing.company.name %></td>
-            <td><%= listing.description %></td>
+            <td><%= truncate(listing.description, length: 25, separator: ' ') %></td>
             <td>
               <%= technologies_to_link_string(listing) %>
             </td>
