@@ -1,5 +1,10 @@
 <div class="card mx-auto my-4" style="max-width: 40%">
-  <%= image_tag 'mock_map.png', class: "card-img-top" %>
+  <% if @company.address.present? %>
+    <iframe width="400" height="400" frameborder="1" style="border:0" class="card-img-top"
+	src="https://www.google.com/maps/embed/v1/search?q=<%= @company.address.gsub(" ", "+") %>&key=<%= Rails.application.credentials.google[:maps_key] %>" allowfullscreen></iframe>
+  <% else %>
+    <%= image_tag 'map-placeholder', class: 'card-img-top' %>
+  <% end %>
 
   <h3 class="card-title p-3"><%= @company.name %></h3>
   <div class="card-body">

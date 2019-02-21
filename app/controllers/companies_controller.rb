@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
     @companies = current_user.companies.all
   end
@@ -19,14 +19,14 @@ class CompaniesController < ApplicationController
 
     respond_to do |format|
       if @company.save
-        format.html { redirect_to @company, notice: 'Company created' } 
+        format.html { redirect_to @company, notice: "Company created" }
         format.json { render json: { value: @company.id, text: @company.name } }
       else
         format.html { render :new }
         format.json { render json: { errors: @company.errors.full_messages } }
       end
-      
-    # Handle very fast tab insertions on form
+
+      # Handle very fast tab insertions on form
     rescue ActiveRecord::RecordNotUnique
       format.json { render json: { message: "Company already created" } }
     end
@@ -40,7 +40,7 @@ class CompaniesController < ApplicationController
     @company = current_user.companies.find(params[:id])
 
     if @company.update(company_params)
-      redirect_to @company, notice: 'Company updated'
+      redirect_to @company, notice: "Company updated"
     else
       render :edit
     end
@@ -49,7 +49,7 @@ class CompaniesController < ApplicationController
   def destroy
     @company = current_user.companies.find(params[:id])
     @company.destroy
-    redirect_to companies_path, notice: 'Company deleted'
+    redirect_to companies_path, notice: "Company deleted"
   end
 
   private

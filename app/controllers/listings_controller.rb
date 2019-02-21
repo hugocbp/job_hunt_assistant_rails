@@ -2,7 +2,7 @@ class ListingsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @listings = current_user.listings
+    @listings = current_user.listings.includes(:technologies, :requirements, :company)
   end
 
   def show

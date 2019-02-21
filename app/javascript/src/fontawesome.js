@@ -13,7 +13,7 @@ library.add(faPlusSquare);
 library.add(faTasks);
 library.add(faPlusCircle);
 library.add(faChartLine);
-library.add(faArrowLeft);
 library.add(faArrowRight);
+library.add(faArrowLeft);
 
 dom.watch();
