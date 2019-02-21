@@ -1,0 +1,7 @@
+<% if @listing.errors.any? %>
+  console.log("Some error occurred. Could not update listing...");
+<% else %>
+  $('<%= "#listing-#{@listing.id}" %>').remove()
+  $('<%= "##{@listing.status}-col .card-block" %>').append(
+  "<%= escape_javascript(render partial: 'listings/kanban_card', locals: { listing: @listing }) %>")
+<% end %>

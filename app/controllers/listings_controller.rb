@@ -48,25 +48,19 @@ class ListingsController < ApplicationController
 
   def next_status
     @listing = current_user.listings.find(params[:listing_id])
+    @listing.next_status
 
     respond_to do |format|
-      if @listing.next_status
-        format.js
-      else
-        format.js { render json: { errors: "Update failed" } }
-      end
+      format.js { render template: "listings/kanban_status_change.js.erb", layout: false }
     end
   end
 
   def prev_status
     @listing = current_user.listings.find(params[:listing_id])
+    @listing.prev_status
 
     respond_to do |format|
-      if @listing.prev_status
-        format.js
-      else
-        format.js { render json: { errors: "Update failed" } }
-      end
+      format.js { render template: "listings/kanban_status_change.js.erb", layout: false }
     end
   end
 
