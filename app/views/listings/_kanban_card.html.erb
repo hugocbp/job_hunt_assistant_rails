@@ -13,7 +13,7 @@
       <% end %>
     <% end %>
 
-    <% if listing.abandoned? %>
+    <% if listing.unsuccessful? %>
       <i></i>
     <% else %>
       <%= link_to listing_next_status_path(listing), method: :put, remote: true do %>

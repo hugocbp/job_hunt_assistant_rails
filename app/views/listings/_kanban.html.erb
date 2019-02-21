@@ -45,10 +45,10 @@
     </div>
 
     <div class="col">
-      <div id="abandoned-col" class="card bg-light">
+      <div id="unsuccessful-col" class="card bg-light">
         <div class="card-block p-3">
           <h4 class="card-title text-danger text-center py-2">Unsuccessful</h4>
-          <% @listings.abandoned.each do |listing| %>
+          <% @listings.unsuccessful.each do |listing| %>
             <%= render 'listings/kanban_card', listing: listing %>
           <% end %>
         </div>
