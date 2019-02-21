@@ -1,0 +1,30 @@
+<%- if @listings.empty? %>
+  <p>You don't have any listings at this moment...</p>
+<% else %>
+  <table class="table">
+    <thead>
+      <thead>
+        <tr>
+          <th scope="col">Status</th>
+          <th scope="col">Title</th>
+          <th scope="col">Company</th>
+          <th scope="col">Description</th>
+          <th scope="col">Technologies</th>
+        </tr>
+      </thead>
+    </thead>
+    <tbody>
+      <% @listings.each_with_index do |listing, i| %>
+        <tr>
+          <td><%= get_status(listing) %></td>
+          <td><%= link_to listing.title, listing %></td>
+          <td><%= listing.company.name %></td>
+          <td><%= truncate(listing.description, length: 25, separator: ' ') %></td>
+          <td>
+            <%= technologies_to_link_string(listing) %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

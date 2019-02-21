@@ -30,10 +30,11 @@ puts "done!"
 print "Creating listings...  "
 10.times do
   print "."
-	user.listings.create({
+	user.listings.create!({
 		title: Faker::Job.title,
 		company: Company.find(rand(Company.all.size) + 1),
-    description: Faker::Lorem.paragraph(20)
+    description: Faker::Lorem.paragraph(20),
+    status: rand(4)
 	})
 end
 puts "done!"
@@ -41,8 +42,8 @@ puts "done!"
 print "Creating requirements...  "
 20.times do
   print "."
-  listing = Listing.find(rand(Listing.all.size) + 1)
-  tech = Technology.find(rand(Technology.all.size) + 1)
+  listing = Listing.find(rand(Listing.all.size).to_i + 1)
+  tech = Technology.find(rand(Technology.all.size).to_i + 1)
   
   if Requirement.where(listing: listing, technology: tech).empty?
     r = Requirement.new({listing: listing, technology: tech})

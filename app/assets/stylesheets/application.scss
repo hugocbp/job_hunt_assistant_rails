@@ -25,6 +25,13 @@
   z-index: 9999;
 }
 
+.break-out {
+  width: 100vw;
+  position: relative;
+  left: calc(-1 * (100vw - 100%) / 2);
+  color: rgba(0, 0, 0, 0.6);
+}
+
 @media screen and (min-width: 769px) {
   .auth-card {
     max-width: 40%;

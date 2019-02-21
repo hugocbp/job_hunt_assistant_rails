@@ -6,4 +6,6 @@ class Listing < ApplicationRecord
   has_many :technologies, -> { distinct }, through: :requirements
 
   validates :title, length: { minimum: 3 }
+
+  enum status: [ :not_applied, :applied, :called, :offered, :abandoned ]
 end

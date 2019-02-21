@@ -1,0 +1,76 @@
+<div class="container-fluid">
+  <div class="row flex-row flex-sm-nowrap py-4">
+    <div class="col">
+      <div class="card bg-light">
+        <div class="card-block p-3">
+          <h4 class="card-title text-secondary text-center py-2">Not Applied</h4>
+          <% @listings.not_applied.each do |listing| %>
+            <div class="card p-2 my-2">
+              <h6 class="card-title">
+                <%= listing.title %> at <span class="text-muted"><%= listing.company.name %></span>
+              </h6>
+              <p class="text-dark"><%= truncate(listing.description, length: 60, separator: ' ') %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card bg-light">
+        <div class="card-block p-3">
+          <h4 class="card-title text-info text-center py-2">Applied</h4>
+          <% @listings.applied.each do |listing| %>
+            <div class="card p-2 my-2">
+              <h6 class="card-title"><%= listing.title %></h6>
+              <p class="text-dark"><%= truncate(listing.description, length: 60, separator: ' ') %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card bg-light">
+        <div class="card-block p-3">
+          <h4 class="card-title text-primary text-center py-2">Called</h4>
+          <% @listings.called.each do |listing| %>
+            <div class="card p-2 my-2">
+              <h6 class="card-title"><%= listing.title %></h6>
+              <p class="text-dark"><%= truncate(listing.description, length: 60, separator: ' ') %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card bg-light">
+        <div class="card-block p-3">
+          <h4 class="card-title text-success text-center py-2">Offered</h4>
+          <% @listings.offered.each do |listing| %>
+            <div class="card p-2 my-2">
+              <h6 class="card-title"><%= listing.title %></h6>
+              <p class="text-dark"><%= truncate(listing.description, length: 60, separator: ' ') %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card bg-light">
+        <div class="card-block p-3">
+          <h4 class="card-title text-danger text-center py-2">Unsuccessful</h4>
+          <% @listings.applied.each do |listing| %>
+            <div class="card p-2 my-2">
+              <h6 class="card-title"><%= listing.title %></h6>
+              <p class="text-dark"><%= truncate(listing.description, length: 60, separator: ' ') %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
