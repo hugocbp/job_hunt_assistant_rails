@@ -1,22 +1,31 @@
-<%= form_for @listing, remote: true do |f| %>
-  <%= render "shared/errors", object: @listing %>
+<%= render "shared/errors", object: @listing %>
+
+<%= form_with model: @listing, local: true, remote: true do |f| %>
   <div class="form-group">
     <%= f.label "Title" %>
     <%= f.text_field :title , class: "form-control"%>
   </div>
+
   <div class="form-group">
     <%= f.label "Link (optional)" %>
     <%= f.text_field :url , class: "form-control" %>
   </div>
+
   <div class="form-group">
     <%= f.label "Company / Location" %>
     <%= collection_select(:listing, :company_id, current_user.companies, :id, :name, { prompt: true }, { required: true, class: 'selectize'}) %>
   </div>
+
   <div class="form-group">
     <%= f.label "Technologies Required / Desired" %>
     <%= f.collection_select(:technology_ids, current_user.technologies, :id, :name,
 			{ prompt: true, include_blank: false, include_hidden: false }, 
 			{ required: false, class: 'selectize', multiple: true}) %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label "Status" %>
+    <%= f.select :status, Listing.statuses.keys.map {|s| [s.humanize.capitalize, s] }, {}, { class: 'form-control' } %>
   </div>
 
   <div class="form-group">

@@ -8,7 +8,7 @@ class ListingsController < ApplicationController
   def show
     @listing = current_user.listings.find(params[:id])
   end
-  
+
   def edit
     @listing = current_user.listings.find(params[:id])
     @companies = current_user.companies.all
@@ -17,9 +17,8 @@ class ListingsController < ApplicationController
   def update
     @listing = current_user.listings.find(params[:id])
     if @listing.update(listing_params)
-      redirect_to @listing, notice: 'Listing updated'
+      redirect_to @listing, notice: "Listing updated"
     else
-      @companies = current_user.companies # Re-render in case of errors
       render :edit
     end
   end
@@ -27,12 +26,12 @@ class ListingsController < ApplicationController
   def new
     @listing = current_user.listings.new
   end
-  
+
   def create
     @listing = current_user.listings.new(listing_params)
-    
+
     if @listing.save
-      redirect_to @listing, notice: 'Listing created'
+      redirect_to @listing, notice: "Listing created"
     else
       # Re-render companies in case of errors
       @companies = current_user.companies
@@ -49,6 +48,6 @@ class ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:title, :company_id, :description, :url,technology_ids: [])
+    params.require(:listing).permit(:title, :company_id, :description, :url, :status, technology_ids: [])
   end
 end

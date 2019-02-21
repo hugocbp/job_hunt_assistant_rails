@@ -22,7 +22,7 @@ $(document).on("turbolinks:load", function() {
   });
 
   let $technologies = $("select#listing_technology_ids").selectize({
-    selectOnTab: true,
+    selectOnTab: false,
     createOnBlur: false,
     create: function(input, cb) {
       $.ajax({
