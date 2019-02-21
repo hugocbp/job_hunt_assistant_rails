@@ -5,6 +5,10 @@
     <%= f.text_field :title , class: "form-control"%>
   </div>
   <div class="form-group">
+    <%= f.label "Link (optional)" %>
+    <%= f.text_field :url , class: "form-control" %>
+  </div>
+  <div class="form-group">
     <%= f.label "Company / Location" %>
     <%= collection_select(:listing, :company_id, current_user.companies, :id, :name, { prompt: true }, { required: true, class: 'selectize'}) %>
   </div>
@@ -14,6 +18,7 @@
 			{ prompt: true, include_blank: false, include_hidden: false }, 
 			{ required: false, class: 'selectize', multiple: true}) %>
   </div>
+
   <div class="form-group">
     <%= f.label "Description" %>
     <%= f.text_area :description , class: "form-control", rows: 10%>

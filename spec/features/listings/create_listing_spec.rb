@@ -20,6 +20,7 @@ describe 'Creating a new listing' do
     select company.name, from: 'listing_company_id'
     select tech.name, from: 'listing_technology_ids'
     select tech2.name, from: 'listing_technology_ids'
+    fill_in 'listing_url', with: 'http://www.google.com'
     fill_in 'listing_description', with: 'Dummy description for new listing'
 
     click_button 'Create Listing'
@@ -29,6 +30,7 @@ describe 'Creating a new listing' do
     expect(page).to have_content company.name
     expect(page).to have_content tech.name
     expect(page).to have_content tech2.name
+    expect(page).to have_link 'Go to listing'
     expect(page).to have_content 'Listing created'
   end
 
