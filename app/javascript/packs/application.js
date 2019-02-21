@@ -11,3 +11,7 @@ require("bootstrap");
 require("../src/fontawesome");
 require("selectize");
 require("../src/app");
+
+import $ from "jquery";
+
+global.$ = jQuery;

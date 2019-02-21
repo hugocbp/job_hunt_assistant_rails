@@ -1,0 +1,3 @@
+$('<%= "#listing-#{@listing.id}" %>').remove()
+$('<%= "##{@listing.status}-col .card-block" %>').append(
+"<%= escape_javascript(render partial: 'listings/kanban_card', locals: { listing: @listing }) %>")

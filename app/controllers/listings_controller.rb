@@ -16,6 +16,7 @@ class ListingsController < ApplicationController
 
   def update
     @listing = current_user.listings.find(params[:id])
+
     if @listing.update(listing_params)
       redirect_to @listing, notice: "Listing updated"
     else
@@ -43,6 +44,30 @@ class ListingsController < ApplicationController
     @listing = current_user.listings.find(params[:id])
     @listing.destroy
     redirect_to listings_path, notice: "Listing deleted"
+  end
+
+  def next_status
+    @listing = current_user.listings.find(params[:listing_id])
+
+    respond_to do |format|
+      if @listing.next_status
+        format.js
+      else
+        format.js { render json: { errors: "Update failed" } }
+      end
+    end
+  end
+
+  def prev_status
+    @listing = current_user.listings.find(params[:listing_id])
+
+    respond_to do |format|
+      if @listing.prev_status
+        format.js
+      else
+        format.js { render json: { errors: "Update failed" } }
+      end
+    end
   end
 
   private

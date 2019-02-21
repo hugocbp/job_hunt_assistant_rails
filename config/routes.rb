@@ -1,11 +1,14 @@
-Rails.application.routes.draw do 
+Rails.application.routes.draw do
   devise_for :users
 
-  get '/dashboard', to: 'pages#dashboard', as: 'dashboard'
+  get "/dashboard", to: "pages#dashboard", as: "dashboard"
 
-	resources :listings
+  resources :listings do
+    put "/next_status" => "listings#next_status"
+    put "/prev_status" => "listings#prev_status"
+  end
   resources :technologies
   resources :companies
 
-  root 'pages#index'
+  root "pages#index"
 end

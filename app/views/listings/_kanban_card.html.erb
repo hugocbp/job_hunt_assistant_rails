@@ -1,0 +1,24 @@
+<div id='<%= "listing-#{listing.id}" %>' class="card p-2 my-2">
+  <h6 class="card-title">
+    <%= listing.title %> at <span class="text-muted"><%= listing.company.name %></span>
+  </h6>
+  <p class="text-dark"><%= truncate(listing.description, length: 60, separator: ' ') %></p>
+
+  <div class="d-flex justify-content-between"">
+    <% if listing.not_applied? %>
+      <i></i>
+    <% else %>
+      <%= link_to listing_prev_status_path(listing), method: :put, remote: true do %>
+        <i class="fas fa-arrow-left"></i>
+      <% end %>
+    <% end %>
+
+    <% if listing.abandoned? %>
+      <i></i>
+    <% else %>
+      <%= link_to listing_next_status_path(listing), method: :put, remote: true do %>
+        <i class="fas fa-arrow-right"></i>
+      <% end %>
+    <% end %>
+  </div>
+</div>
