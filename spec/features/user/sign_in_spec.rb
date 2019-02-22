@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe "Signing in" do
   let(:user) { FactoryBot.create(:user) }
@@ -16,7 +16,6 @@ describe "Signing in" do
 
       click_button "Log in"
       expect(current_path).to eq dashboard_path
-      expect(page).to have_content "Your Dashboard"
       expect(page).to have_content "Signed in"
     end
   end

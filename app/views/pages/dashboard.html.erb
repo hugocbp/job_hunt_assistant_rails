@@ -1,7 +1,131 @@
-<h2>Your Dashboard</h2>
+<div class="row">
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-primary h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Listings</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @dashboard_data[:listings_count] %></div>
+          </div>
+          <div class="col-auto">
+            <i class="fas fa-align-justify fa-2x text-black-50"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<ul>
-	<li>Lisings: <%= @dashboard_data[:listings_count] %></li>
-	<li>Technologies: <%= @dashboard_data[:technologies_count] %></li>
-	<li>Companies: <%= @dashboard_data[:companies_count] %></li>
-</ul>
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-primary h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Called</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @listings.called.count %></div>
+          </div>
+          <div class="col-auto">
+            <i class="fas fa-phone fa-2x text-black-50"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-success h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">Offered</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @listings.offered.count %></div>
+          </div>
+          <div class="col-auto">
+            <i class="fas fa-dollar-sign fa-2x text-black-50"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-danger h-100 py-2">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Unsuccessful</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800"><%= @listings.unsuccessful.count %></div>
+          </div>
+          <div class="col-auto">
+            <i class="fas fa-times fa-2x text-black-50"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-6 mb-4">
+    <div class="card border-primary mb-4">
+      <div class="card-header py-3">
+        <h6 class="text-xs font-weight-bold text-primary text-uppercase mb-1">Tech Ranking</h6>
+      </div>
+      <div class="card-body">
+        <ol class="pb-1">
+          <% @ranking_tech.each do |tech| %>
+            <li class="my-2"><%= link_to tech.name, tech, class: 'text-xs font-weight-bold mb-1' %></li>
+          <% end %>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6 mb-4">
+    <div class="card border-dark mb-4">
+      <div class="card-header py-3">
+        <h6 class="text-xs font-weight-bold text-dark text-uppercase mb-1">Company Ranking</h6>
+      </div>
+      <div class="card-body">
+        <ol class="pb-1">
+          <% @ranking_company.each do |company| %>
+            <li class="my-2"><%= link_to company.name, company, class: 'text-xs font-weight-bold mb-1' %></li>
+          <% end %>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-lg-6 mb-4">
+    <div class="card border-secondary mb-4">
+      <div class="card-header py-3">
+        <h6 class="text-xs font-weight-bold text-secondary text-uppercase mb-1">Not Applied</h6>
+      </div>
+      <div class="card-body">
+        <ul class="pb-1">
+          <% @listings.not_applied.each do |listing| %>
+            <li class="my-2"><%= link_to listing.title, listing, class: 'text-xs mb-1' %> at <%= link_to listing.company.name, listing.company %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-6 mb-4">
+    <div class="card border-info mb-4">
+      <div class="card-header py-3">
+        <h6 class="text-xs font-weight-bold text-info text-uppercase mb-1">Waiting Offer</h6>
+      </div>
+      <div class="card-body">
+        <ul class="pb-1">
+          <% @listings.called.each do |listing| %>
+            <li class="my-2"><%= link_to listing.title, listing, class: 'text-xs mb-1' %> at <%= link_to listing.company.name, listing.company %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>

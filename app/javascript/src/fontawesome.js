@@ -7,6 +7,10 @@ import { faPlusCircle } from "@fortawesome/free-solid-svg-icons/faPlusCircle";
 import { faChartLine } from "@fortawesome/free-solid-svg-icons/faChartLine";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons/faArrowRight";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons/faArrowLeft";
+import { faAlignJustify } from "@fortawesome/free-solid-svg-icons/faAlignJustify";
+import { faDollarSign } from "@fortawesome/free-solid-svg-icons/faDollarSign";
+import { faPhone } from "@fortawesome/free-solid-svg-icons/faPhone";
+import { faTimes } from "@fortawesome/free-solid-svg-icons/faTimes";
 
 library.add(faHeart);
 library.add(faPlusSquare);
@@ -15,5 +19,9 @@ library.add(faPlusCircle);
 library.add(faChartLine);
 library.add(faArrowRight);
 library.add(faArrowLeft);
+library.add(faAlignJustify);
+library.add(faDollarSign);
+library.add(faPhone);
+library.add(faTimes);
 
 dom.watch();
