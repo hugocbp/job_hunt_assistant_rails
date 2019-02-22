@@ -11,6 +11,7 @@ import { faAlignJustify } from "@fortawesome/free-solid-svg-icons/faAlignJustify
 import { faDollarSign } from "@fortawesome/free-solid-svg-icons/faDollarSign";
 import { faPhone } from "@fortawesome/free-solid-svg-icons/faPhone";
 import { faTimes } from "@fortawesome/free-solid-svg-icons/faTimes";
+import { faExclamationTriangle } from "@fortawesome/free-solid-svg-icons/faExclamationTriangle";
 
 library.add(faHeart);
 library.add(faPlusSquare);
@@ -23,5 +24,6 @@ library.add(faAlignJustify);
 library.add(faDollarSign);
 library.add(faPhone);
 library.add(faTimes);
+library.add(faExclamationTriangle);
 
 dom.watch();

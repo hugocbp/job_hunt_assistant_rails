@@ -25,4 +25,8 @@ module ApplicationHelper
       link_to link_text, link_path
     end
   end
+
+  def on_heroku?
+    ENV.any? { |x, _| x =~ /^HEROKU/ }
+  end
 end

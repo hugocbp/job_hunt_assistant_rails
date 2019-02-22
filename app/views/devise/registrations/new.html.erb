@@ -1,4 +1,11 @@
 <div class="my-5">
+  <% if on_heroku? %>
+    <div class="alert alert-warning auth-card mx-auto" role="alert">
+      <i class="fas fa-exclamation-triangle"></i>
+      WARNING: the data on the app on Heroku will be wiped and reset frequently. Please only use it for testing purposes.
+    </div>
+  <% end %>
+
   <div class="card border-dark mb-3 m-auto auth-card">
     <h3 class="card-header text-center">Sign up</h3>
     <div class="card-body text-dark">
