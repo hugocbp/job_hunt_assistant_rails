@@ -1,4 +1,4 @@
-# Tech Job Search Assistant
+# Job Hunt Assistant
 
 A webapplication built with Ruby on Rails 6.0.0.beta1 that assists with job
 hunting opportunities.
@@ -10,19 +10,18 @@ application to the position.
 
 ## Demo
 
-Demo app live at [Heroku](http://hugocbp-job-search-assistant.herokuapp.com)
+Demo app live at [Heroku](http://hugocbp-job-hunt-assistant.herokuapp.com)
 (might take a while to start for the first time).
 
 ## Instructions
 
 1. Download
 2. Run `bundle`
-3. Run `yarn install`
-4. Start Postgres server
-5. Run `rails db:migrate`
-6. (OPTIONAL) Seed the database with `rails db:seed`
-7. Start the server with `rails s`
-8. Access the application at `http://localhost:3000`
+3. Start Postgres server
+4. Run `rails db:migrate`
+5. (OPTIONAL) Seed the database with `rails db:seed`
+6. Start the server with `rails s`
+7. Access the application at `http://localhost:3000`
 
 ## Tests
 
