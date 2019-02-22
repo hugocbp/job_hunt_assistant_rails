@@ -27,6 +27,6 @@ module ApplicationHelper
   end
 
   def on_heroku?
-    ENV.any? { |x, _| x =~ /^HEROKU/ }
+    ENV["ON_HEROKU"] ? true : false
   end
 end
