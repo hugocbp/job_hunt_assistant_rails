@@ -1,8 +1,15 @@
 <div id='<%= "listing-#{listing.id}" %>' class="card p-2 my-2">
-  <h6 class="card-title">
-    <%= listing.title %> at <span class="text-muted"><%= listing.company.name %></span>
+  <h6 class="card-title mb-1">
+    <%= link_to listing do %>
+      <%= listing.title %> at <span class="text-muted"><%= listing.company.name %></span>
+    <% end %>
   </h6>
-  <p class="text-dark"><%= truncate(listing.description, length: 60, separator: ' ') %></p>
+
+  <p class="mb-1">
+    <% listing.technologies.each do |tech| %>
+      <span class="badge badge-pill badge-light"><%= tech.name %> </span>
+    <% end %>
+  </p>
 
   <div class="d-flex justify-content-between"">
     <% if listing.not_applied? %>
