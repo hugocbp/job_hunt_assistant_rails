@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "The navigation" do
+RSpec.describe "The navigation" do
   let(:user) { FactoryBot.create(:user) }
   before(:each) { sign_in user }
 
@@ -26,5 +26,11 @@ describe "The navigation" do
     click_link "Companies"
 
     expect(current_path).to eq(companies_path)
+  end
+
+  it "redirects a logged user to dashboard from landing page" do
+    visit root_path
+
+    expect(current_path).to eq(dashboard_path)
   end
 end
