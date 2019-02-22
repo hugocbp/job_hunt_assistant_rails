@@ -17,4 +17,12 @@ module ApplicationHelper
       content_tag :span, "Unsuccessful", class: "badge badge-pill badge-danger text-light"
     end
   end
+
+  def nav_link(link_text, link_path)
+    class_name = current_page?(link_path) ? "text-bold nav-link" : "nav-link"
+
+    content_tag(:li, class: class_name) do
+      link_to link_text, link_path
+    end
+  end
 end
