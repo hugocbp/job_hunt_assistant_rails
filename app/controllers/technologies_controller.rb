@@ -1,6 +1,6 @@
 class TechnologiesController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
     @technologies = current_user.technologies
   end
@@ -18,14 +18,14 @@ class TechnologiesController < ApplicationController
 
     respond_to do |format|
       if @technology.save
-        format.html { redirect_to technologies_path, notice: 'Technology created' }
-        format.json { render json: { value: @technology.id, text: @technology.name } }        
+        format.html { redirect_to @technology, notice: "Technology created" }
+        format.json { render json: { value: @technology.id, text: @technology.name } }
       else
         format.html { render :new }
         format.json { render json: { errors: @technology.errors.full_messages } }
       end
-      
-    # Handle very fast tab insertions on form
+
+      # Handle very fast tab insertions on form
     rescue ActiveRecord::RecordNotUnique
       format.json { render json: { message: "Technology already created" } }
     end
@@ -38,7 +38,7 @@ class TechnologiesController < ApplicationController
   def update
     @technology = current_user.technologies.find(params[:id])
     if @technology.update(tech_params)
-      redirect_to technologies_path, notice: 'Technology updated'
+      redirect_to @technology, notice: "Technology updated"
     else
       render :edit
     end
@@ -47,7 +47,7 @@ class TechnologiesController < ApplicationController
   def destroy
     @technology = current_user.technologies.find(params[:id])
     @technology.destroy
-    redirect_to technologies_path, notice: 'Technology deleted'
+    redirect_to technologies_path, notice: "Technology deleted"
   end
 
   private
