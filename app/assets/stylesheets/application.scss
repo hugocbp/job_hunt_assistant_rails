@@ -16,6 +16,10 @@
   max-width: 40%;
 }
 
+.links-light a {
+  @extend .text-light;
+}
+
 .alert-float {
   position: fixed;
   top: 75px;
