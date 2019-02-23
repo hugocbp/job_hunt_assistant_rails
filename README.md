@@ -5,7 +5,7 @@ providing new and quick ways to glance at the relevant information and take the
 necessary actions.
 
 <p align="center">
-  <img src="app/assets/images/jha-demo.gif"width="70%"align="center" >
+  <img src="app/assets/images/jha-demo.gif" width="90%"align="center" >
 </p>
 
 ## Features
