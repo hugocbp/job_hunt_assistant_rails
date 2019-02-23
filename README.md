@@ -9,24 +9,24 @@ necessary actions.
 - **Dashboard** that shows the relevant information and statistics about the job
   hunting effort, providing a quick overview of where you stand.
 
-<div style="text-align: center;">
-  <img src="app/assets/images/jha-ss-dashboard.png" alt="drawing" width="50%" >
-</div>
+<p align="center">
+  <img src="app/assets/images/jha-ss-dashboard.png" alt="drawing" width="50%"align="center" >
+</p>
 
 - **Kanban view** of current tracked opportunities, allowing quick updates on
   the status of each lead.
 
-<div style="text-align: center;">
-  <img src="app/assets/images/jha-ss-kanban.png" alt="drawing" width="50%" >
-</div>
+<p align="center">
+  <img src="app/assets/images/jha-ss-kanban.png" alt="drawing" width="50%" align="center">
+</p>
 
 - **Company info** with ratings and maps, which are both automatically shown,
   and a list of technologies used at the company to help chosing the right place
   for you.
 
-<div style="text-align: center;">
-  <img src="app/assets/images/jha-ss-company.png" alt="drawing" width="50%" >
-</div>
+<p align="center">
+  <img src="app/assets/images/jha-ss-company.png" alt="drawing" width="50%" align="center">
+</p>
 
 ## Demo
 
