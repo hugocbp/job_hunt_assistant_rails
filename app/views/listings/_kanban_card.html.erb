@@ -11,11 +11,11 @@
     <% end %>
   </p>
 
-  <div class="d-flex justify-content-between"">
+  <div class="d-flex justify-content-between card-status-actions">
     <% if listing.not_applied? %>
       <i></i>
     <% else %>
-      <%= link_to listing_prev_status_path(listing), method: :put, remote: true do %>
+      <%= link_to listing_prev_status_path(listing), method: :put, remote: true, class: "listing-#{listing.id}-prev-status" do %>
         <i class="fas fa-arrow-left"></i>
       <% end %>
     <% end %>
@@ -23,7 +23,7 @@
     <% if listing.unsuccessful? %>
       <i></i>
     <% else %>
-      <%= link_to listing_next_status_path(listing), method: :put, remote: true do %>
+      <%= link_to listing_next_status_path(listing), method: :put, remote: true, class: "listing-#{listing.id}-next-status" do %>
         <i class="fas fa-arrow-right"></i>
       <% end %>
     <% end %>

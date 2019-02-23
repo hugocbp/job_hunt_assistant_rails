@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Editing a listing", javascript: true do
+RSpec.describe "Editing a listing", javascript: true do
   let(:listing) { FactoryBot.create(:listing) }
   before(:each) { sign_in listing.user }
 
@@ -127,7 +127,7 @@ describe "Editing a listing", javascript: true do
       expect(page).to have_link("Go to listing", href: "https://example.com")
     end
 
-    it "updates the status" do
+    it "updates the status on editing page" do
       visit edit_listing_path(listing)
 
       select "Offered", from: "listing_status"
@@ -137,6 +137,29 @@ describe "Editing a listing", javascript: true do
       expect(current_path).to eq(listing_path(listing))
       expect(page).to have_content("Listing updated")
       expect(page).to have_content("Offered")
+    end
+
+    it "updates to the next status on the kanban view", js: true do
+      expect(listing.status).to eq "not_applied"
+
+      visit listings_path
+      find("a.listing-#{listing.id}-next-status").click
+      sleep 1
+
+      listing.reload
+      expect(listing.status).to eq "applied"
+    end
+
+    it "updates to the previous the status on the kanban view", js: true do
+      listing.update(status: :applied)
+      expect(listing.status).to eq "applied"
+
+      visit listings_path
+      find("a.listing-#{listing.id}-prev-status").click
+      sleep 1
+
+      listing.reload
+      expect(listing.status).to eq "not_applied"
     end
   end
 
