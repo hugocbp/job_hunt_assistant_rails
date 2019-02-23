@@ -2,6 +2,7 @@ language: ruby
 rvm:
   - 2.6.1
 before_script:
+  - bundle exec rails assets:precompile
   - bundle exec rails db:create --all
   - bundle exec rails db:migrate
 script:
