@@ -8,12 +8,15 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body>
+  <body class="<%= yield (:body_class) %>">
     <%= render 'layouts/navbar' %>
+
     <% if current_user %>
       <%= render 'layouts/action_menu' %>
     <% end %>
+
     <%= render 'layouts/flash_messages' %>
+
     <main class="container">
       <%= yield %>
     </main>
