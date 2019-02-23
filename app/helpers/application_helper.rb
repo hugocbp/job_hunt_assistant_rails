@@ -3,6 +3,14 @@ module ApplicationHelper
     company.user_glassdoor_rate || company.scraped_glassdoor_rate || "N/A"
   end
 
+  def display_rating(company)
+    rating = get_rating(company)
+
+    color_class = rating >= 4 ? "bg-success" : rating >= 3 ? "bg-warning" : "bg-danger"
+
+    content_tag :span, rating, class: "#{color_class} text-light p-1"
+  end
+
   def get_status(listing)
     case listing.status
     when "not_applied"

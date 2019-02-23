@@ -7,6 +7,7 @@ class CompaniesController < ApplicationController
 
   def show
     @company = current_user.companies.find(params[:id])
+    @company_tech = Technology.joins(:listings).where(listings: { company_id: @company.id })
     Scraper.update_rating(@company, "Vancouver")
   end
 
