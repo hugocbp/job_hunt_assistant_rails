@@ -8,3 +8,5 @@ script:
   - bundle exec rails rspec
 services:
   - postgresql
+addons:
+  postgresql: "11.1"
