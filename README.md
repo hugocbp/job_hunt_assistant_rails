@@ -1,5 +1,7 @@
 # Job Hunt Assistant
 
+[![Build Status](https://travis-ci.org/hugocbp/job_hunt_assistant.svg?branch=master)](https://travis-ci.org/hugocbp/job_hunt_assistant)
+
 Job Hunt Assistant is a webapp built to help with the search for a new job by
 providing new and quick ways to glance at the relevant information and take the
 necessary actions.
