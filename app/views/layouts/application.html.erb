@@ -18,6 +18,8 @@
       <%= yield %>
     </main>
 
-    <%= render 'layouts/footer' unless current_user %>
+    <div class="mt-4">
+      <%= render 'layouts/footer' unless current_user %>
+    </div>
   </body>
 </html>

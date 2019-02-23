@@ -1,4 +1,4 @@
-<div class="my-5">
+<div class="my-3 my-md-5">
   <% if on_heroku? %>
     <div class="alert alert-warning auth-card mx-auto" role="alert">
       <i class="fas fa-exclamation-triangle"></i>
@@ -6,9 +6,9 @@
     </div>
   <% end %>
 
-  <div class="card border-dark mb-3 m-auto auth-card">
+  <div class="card border-dark m-auto auth-card">
     <h3 class="card-header text-center">Sign up</h3>
-    <div class="card-body text-dark">
+    <div class="card-body text-dark p-3">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
 
