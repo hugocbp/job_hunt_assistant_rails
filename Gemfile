@@ -32,6 +32,7 @@ group :test do
 	gem 'simplecov', require: false
 	gem 'selenium-webdriver'
 	gem 'chromedriver-helper'
+	gem 'webmock'
 end
 
 group :development do
