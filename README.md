@@ -4,29 +4,21 @@ Job Hunt Assistant is a webapp built to help with the search for a new job by
 providing new and quick ways to glance at the relevant information and take the
 necessary actions.
 
+<p align="center">
+  <img src="public/assets/jha-demo.gif"width="70%"align="center" >
+</p>
+
 ## Features
 
 - **Dashboard** that shows the relevant information and statistics about the job
   hunting effort, providing a quick overview of where you stand.
 
-<p align="center">
-  <img src="app/assets/images/jha-ss-dashboard.png" alt="drawing" width="50%"align="center" >
-</p>
-
 - **Kanban view** of current tracked opportunities, allowing quick updates on
   the status of each lead.
-
-<p align="center">
-  <img src="app/assets/images/jha-ss-kanban.png" alt="drawing" width="50%" align="center">
-</p>
 
 - **Company info** with ratings and maps, which are both automatically shown,
   and a list of technologies used at the company to help chosing the right place
   for you.
-
-<p align="center">
-  <img src="app/assets/images/jha-ss-company.png" alt="drawing" width="50%" align="center">
-</p>
 
 ## Demo
 

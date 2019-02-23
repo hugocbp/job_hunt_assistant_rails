@@ -17,6 +17,7 @@
     <main class="container">
       <%= yield %>
     </main>
-    <%= render 'layouts/footer' %>
+
+    <%= render 'layouts/footer' unless current_user %>
   </body>
 </html>
