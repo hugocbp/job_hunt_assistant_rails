@@ -4,14 +4,14 @@
     <thead>
       <tr>
         <th scope="col">Name</th>
-        <th scope="col">Actions</th>
+        <th class="d-none d-md-table-cell" scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
       <% @companies.each do |company| %>
         <tr>
           <td><%= link_to company.name, company %></td>
-          <td>
+          <td class="d-none d-md-table-cell">
             <%= link_to 'Edit', edit_company_path(company), class: 'btn btn-sm btn-outline-primary' %>
             <%= link_to 'Delete', company_path(company), method: :delete, class: 'btn btn-sm btn-outline-danger', data: { confirm: 'Are you sure?' } %>
           </td>

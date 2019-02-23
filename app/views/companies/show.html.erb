@@ -1,11 +1,11 @@
 <p class="display-4 font-weight-bold">
   <%= @company.name %>
-  <%= link_to 'Edit', edit_company_path(@company), class: 'btn btn-sm btn-outline-primary ml-5' %>
-  <%= link_to 'Delete', company_path(@company), method: :delete, class: 'btn btn-sm btn-outline-danger', data: { confirm: 'Are you sure?' } %>
+  <%= link_to 'Edit', edit_company_path(@company), class: 'btn btn-sm btn-outline-primary ml-5 d-none d-md-inline-block' %>
+  <%= link_to 'Delete', company_path(@company), method: :delete, class: 'btn btn-sm btn-outline-danger d-none d-md-inline-block', data: { confirm: 'Are you sure?' } %>
 </p>
 <div class="row">
   <div class="col-4-sm">
-    <div class="card mx-auto mt-4">
+    <div class="card mx-auto mt-md-4">
       <% if @company.address.present? %>
         <iframe width="400" height="400" frameborder="1" style="border:0" class="card-img-top"
 			src="https://www.google.com/maps/embed/v1/search?q=<%= @company.address.gsub(" ", "+") %>&key=<%= Rails.application.credentials.google[:maps_key] %>" allowfullscreen></iframe>
@@ -14,14 +14,14 @@
       <% end %>
 
       <div class="card-body">
-        <h4 class="card-text mb-4"><span class="font-weight-bold">Address:</span> <%= @company.address %></h4>
-        <h4 class="card-text font-weight-bold">Rating: <%= display_rating(@company) %></h4>
+        <h4 class="card-text p-0 mb-4"><span class="font-weight-bold">Address:</span> <%= @company.address %></h4>
+        <h4 class="card-text p-0 font-weight-bold">Rating: <%= display_rating(@company) %></h4>
       </div>
     </div>
   </div>
 
   <div class="col-8-sm">
-    <div class="m-5">
+    <div class="m-3 m-md-5">
       <h3 class="mb-4">Listings</h3>
       <% if @company.listings.count < 1 %>
         <p>There are no active listings by <%= @company.name %> at this moment.</p>
@@ -34,7 +34,7 @@
       <% end %>
     </div>
 
-    <div class="m-5 mt-5">
+    <div class="m-3 m-md-5">
       <h3 class="mb-4">Technologies</h3>
       <% if @company_tech.count < 1 %>
         <p>There are no active listings by <%= @company.name %> at this moment.</p>
@@ -47,4 +47,9 @@
       <% end %>
     </div>
   </div>
+</div>
+
+<div class="d-block d-md-none text-center">
+  <%= link_to 'Edit', edit_company_path(@company), class: 'btn btn-sm btn-outline-primary' %>
+  <%= link_to 'Delete', company_path(@company), method: :delete, class: 'btn btn-sm btn-outline-danger', data: { confirm: 'Are you sure?' } %>
 </div>
