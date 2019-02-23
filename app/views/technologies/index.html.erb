@@ -11,7 +11,7 @@
     <tbody>
       <% @technologies.each do |tech| %>
         <tr>
-          <td><%= link_to tech.name, tech %></td>
+          <td><%= link_to truncate(tech.name, length: 40), tech %></td>
           <td>
             <span class="badge badge-pill badge-primary">
               <%= tech.requirements.size %>

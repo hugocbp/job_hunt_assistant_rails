@@ -1,20 +1,19 @@
 <h2 class="display-3  my-4">
   <%= @listing.title %>
 </h2>
+
 <h3>
   <%= link_to @listing.company.name, @listing.company %>
-  <span class="text-muted pl-4"> <i class="fas fa-chart-line"></i> <%= get_rating(@listing.company) %> </span>
+  <span class="text-muted pl-4"> <%= display_rating(@listing.company) %> </span>
 </h3>
-
-<p>
+<h3 class="mb-4">
   <%= get_status(@listing) %>
-</p>
-
-<%= link_to 'Go to listing', url_for(@listing.url) %>
+</h3>
 
 <div class="row">
   <div class="col-8">
     <article class="py-2 mt-3">
+      <%= link_to 'Go to listing', url_for(@listing.url) %>
       <p><%= @listing.description %></p>
     </article>
   </div>

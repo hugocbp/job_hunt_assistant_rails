@@ -7,7 +7,7 @@ class TechnologiesController < ApplicationController
 
   def show
     @technology = current_user.technologies.find(params[:id])
-    @technology_companies = Listing.joins(:requirements).where(requirements: { technology_id: 11 }).select(:company_id).distinct
+    @technology_companies = Listing.joins(:requirements).where(requirements: { technology_id: @technology.id }).select(:company_id).distinct
   end
 
   def new
