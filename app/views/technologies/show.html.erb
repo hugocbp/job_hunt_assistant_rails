@@ -1,20 +1,33 @@
-<h4 class="display-3 my-4">
-  <span class="badge badge-pill badge-primary">
-    <%= @technology.requirements.size %>
-  </span>
+<p class="display-4 font-weight-bold">
   <%= @technology.name %>
-</h4>
-
-<h3>Required on:</h3>
-<ul>
-  <% @technology.requirements.each do |requirement| %>
-    <li>
-      <%= link_to requirement.listing.title, listing_path(requirement.listing) %> at <%= requirement.listing.company.name %>
-    </li>
-  <% end %>
-</ul>
-
-<div class="mt-4">
-  <%= link_to 'Edit', edit_technology_path(@technology), class: 'btn btn-sm btn-outline-primary' %>
+  <%= link_to 'Edit', edit_technology_path(@technology), class: 'btn btn-sm btn-outline-primary ml-5' %>
   <%= link_to 'Delete', technology_path(@technology), method: :delete, class: 'btn btn-sm btn-outline-danger', data: { confirm: 'Are you sure?' } %>
+</p>
+
+<div class="my-5">
+  <h3 class="mb-4">Appears on <%= pluralize @technology.requirements.size, 'listing' %>:</h3>
+  <% if @technology.listings.size < 1 %>
+    <p>There are no active listings requiring <%= @technology.name %> at this moment.</p>
+  <% else %>
+    <ul>
+      <% @technology.listings.each do |listing| %>
+        <li><%= link_to listing.title, listing %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
+
+<div class="my-5">
+  <h3 class="mb-4">Used by:</h3>
+  <% if @technology_companies.size < 1 %>
+    <p>There are no active listings requiring <%= @technology.name %> at this moment.</p>
+  <% else %>
+    <ul>
+      <% @technology_companies.each do |listing| %>
+        <li>
+          <%= link_to listing.company.name, listing.company %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
 </div>

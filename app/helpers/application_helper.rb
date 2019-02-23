@@ -6,7 +6,11 @@ module ApplicationHelper
   def display_rating(company)
     rating = get_rating(company)
 
-    color_class = rating >= 4 ? "bg-success" : rating >= 3 ? "bg-warning" : "bg-danger"
+    if rating == "N/A"
+      color_class = "bg-light"
+    else
+      color_class = rating.to_i >= 4 ? "bg-success" : rating >= 3 ? "bg-warning" : "bg-danger"
+    end
 
     content_tag :span, rating, class: "#{color_class} text-light p-1"
   end
