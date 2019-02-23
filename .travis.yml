@@ -5,7 +5,7 @@ before_script:
   - bundle exec rails db:create --all
   - bundle exec rails db:migrate
 script:
-  - bundle exec rails rspec
+  - bundle exec rspec
 services:
   - postgresql
 addons:
