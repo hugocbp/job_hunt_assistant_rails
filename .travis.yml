@@ -2,6 +2,7 @@ language: ruby
 rvm:
   - 2.6.1
 before_script:
+  - psql -c 'create database job_hunt_assistant_test;' -U postgres
   - bundle exec rails db:create --all
   - bundle exec rails db:migrate
 script:
