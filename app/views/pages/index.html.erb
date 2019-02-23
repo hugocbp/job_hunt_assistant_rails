@@ -1,16 +1,16 @@
 <!-- HERO -->
 <div class="break-out jumbotron jumbotron-fluid text-center text-light bg-image">
-  <h1 class="display-4 my-5">Your personal assistant for job hunting</h1>
-  <p class="lead">Use Job Hunt Assistant to help you track, organize and manage the job positions you are interested in.</p>
+  <h1 class="display-sm-5 display-md-4 my-5">Your personal assistant for job hunting</h1>
+  <p class="lead px-2">Use Job Hunt Assistant to help you track, organize and manage the job positions you are interested in.</p>
   <%= link_to 'Start now', new_user_registration_path, class: "btn btn-lg btn-outline-light mt-5 mb-5" %>
 </div>
 
 <!-- SUMMARY -->
-<div class="row" id="summary">
+<div class="row my-lg-5" id="summary">
   <div class="col-sm">
     <div class="card text-center border-0">
       <div class="card-body">
-        <i class="display-4 far fa-plus-square m-4"></i>
+        <i class="display-4 far fa-plus-square my-3"></i>
         <h5 class="card-title">Add companies</h5>
         <p class="card-text">Add different companies and office locations and see the map and employee given ratings</p>
       </div>
@@ -20,7 +20,7 @@
   <div class="col-sm">
     <div class="card text-center border-0">
       <div class="card-body">
-        <i class="display-4 far fa-heart m-4"></i>
+        <i class="display-4 far fa-heart my-3"></i>
         <h5 class="card-title">Work with what you love</h5>
         <p class="card-text">List all technologies, programming languages and frameworks from the different positions to filter easily for the ones you prefer</p>
       </div>
@@ -30,7 +30,7 @@
   <div class="col-sm">
     <div class="card text-center border-0">
       <div class="card-body">
-        <i class="display-4 fas fa-tasks m-4"></i>
+        <i class="display-4 fas fa-tasks my-3"></i>
         <h5 class="card-title">Keep track</h5>
         <p class="card-text">Easily mark positions as interested, applied, called, offered or unsuccessful to have full picture of the job hunting process</p>
       </div>
@@ -40,40 +40,40 @@
 
 <!-- DASHBOARD -->
 <div class="break-out bg-light" id="dashboard">
-  <div class="text-center p-5">
-    <h2 class="display-4">See where you stand</h2>
-    <p class="lead">Quickly glance at the most important information on your job hunting</p>
-    <%= image_tag 'jha-ss-dashboard.png', class: 'img-fluid landing-screenshot shadow' %>
+  <div class="text-center py-5">
+    <h2 class="display-md-4">See where you stand</h2>
+    <p class="lead py-3">Quickly glance at the most important information on your job hunting</p>
+    <%= image_tag 'jha-ss-dashboard.png', class: 'img-fluid landing-screenshot shadow w-75' %>
   </div>
 </div>
 
 <!-- KANBAN -->
 <div class="break-out bg-dark text-light" id="kanban">
-  <div class="row p-5 h-100">
-    <div class="col text-right my-auto">
+  <div class="row p-5 h-100 py-5">
+    <div class="col-12 col-lg-6 text-center text-lg-right my-auto">
       <div class="d-flex flex-column align-items-stretch h-100">
-        <h2 class="display-4">Keep track</h2>
+        <h2 class="display-md-4">Keep track</h2>
         <p class="lead">Easily update the status changes of your leads with the kanban view</p>
       </div>
     </div>
 
-    <div class="col">
-      <%= image_tag 'jha-ss-kanban.png', class: 'img-fluid landing-screenshot shadow' %>
+    <div class="col-12 col-lg-6 text-center">
+      <%= image_tag 'jha-ss-kanban.png', class: 'img-fluid landing-screenshot shadow w-100' %>
     </div>
   </div>
 </div>
 
 <!-- COMPANY -->
 <div class="break-out bg-light" id="company">
-  <div class="row p-5 h-1--">
-    <div class="col text-right">
-      <%= image_tag 'jha-ss-company.png', class: 'img-fluid landing-screenshot shadow' %>
+  <div class="row p-5">
+    <div class="col-12 col-lg-6 order-2 order-lg-1 text-center text-md-right">
+      <%= image_tag 'jha-ss-company.png', class: 'img-fluid landing-screenshot shadow w-100' %>
     </div>
 
-    <div class="col text-left my-auto">
+    <div class="col-12 order-1 order-lg-2 col-lg-6 text-left my-auto">
       <div class="d-flex flex-column align-items-stretch h-100">
-        <h2 class="display-4">Choose right</h2>
-        <p class="lead">Add a company and see automatically filled ratings and maps, as well as the list of technologies for each company with open positions</p>
+        <h2 class="display-md-4 text-center text-lg-left my-3 my-md-4">Choose right</h2>
+        <p class="lead text-center text-md-left">Add a company and see automatically filled ratings and maps, as well as the list of technologies for each company with open positions</p>
       </div>
     </div>
   </div>
@@ -82,7 +82,7 @@
 <!-- CALL TO ACTION -->
 <div class="break-out bg-primary text-light" id="cta">
   <div class="text-center p-5">
-    <h2 class="display-4">Start now</h2>
+    <h2 class="display-md-4">Start now</h2>
     <p class="lead m-4">Create your account for free and start hunting!</p>
     <%= link_to 'Start now', new_user_registration_path, class: "btn btn-lg btn-outline-light mt-4 mb-4" %>
   </div>
