@@ -1,17 +1,46 @@
 # Job Hunt Assistant
 
-A webapplication built with Ruby on Rails 6.0.0.beta1 that assists with job
-hunting opportunities.
+Job Hunt Assistant is a webapp built to help with the search for a new job by
+providing new and quick ways to glance at the relevant information and take the
+necessary actions.
 
-The app allows the user to create listings with the technologies required,
-office location and description and it tries to find the Glassdoor rate for the
-office, displays the map and allows the user to set the status of his/her
-application to the position.
+## Features
+
+- **Dashboard** that shows the relevant information and statistics about the job
+  hunting effort, providing a quick overview of where you stand.
+
+<div style="text-align: center;">
+  <img src="app/assets/images/jha-ss-dashboard.png" alt="drawing" width="50%" >
+</div>
+
+- **Kanban view** of current tracked opportunities, allowing quick updates on
+  the status of each lead.
+
+<div style="text-align: center;">
+  <img src="app/assets/images/jha-ss-kanban.png" alt="drawing" width="50%" >
+</div>
+
+- **Company info** with ratings and maps, which are both automatically shown,
+  and a list of technologies used at the company to help chosing the right place
+  for you.
+
+<div style="text-align: center;">
+  <img src="app/assets/images/jha-ss-company.png" alt="drawing" width="50%" >
+</div>
 
 ## Demo
 
 Demo app live at [Heroku](http://hugocbp-job-hunt-assistant.herokuapp.com)
 (might take a while to start for the first time).
+
+## Technical Specifications
+
+- Ruby 2.6.1
+- Rails 6.0.0.beta1
+- Bootstrap 4
+- RSpec 3
+- Devise
+- Capistrano (deploy on test Vagrant box with Ubuntu 18.04.2 LTS)
 
 ## Instructions
 
