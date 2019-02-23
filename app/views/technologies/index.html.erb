@@ -5,7 +5,7 @@
       <tr>
         <th scope="col">Name</th>
         <th scope="col">Count</th>
-        <th scope="col">Actions</th>
+        <th class="d-none d-md-table-cell" scope="col">Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -17,7 +17,7 @@
               <%= tech.requirements.size %>
             </span>
           </td>
-          <td>
+          <td class="d-none d-md-table-cell">
             <%= link_to 'Edit', edit_technology_path(tech), class: 'btn btn-sm btn-outline-primary' %>
             <%= link_to 'Delete', technology_path(tech), method: :delete, class: 'btn btn-sm btn-outline-danger', data: { confirm: 'Are you sure?' } %>
           </td>

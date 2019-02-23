@@ -1,33 +1,40 @@
-<p class="display-4 font-weight-bold">
-  <%= @technology.name %>
-  <%= link_to 'Edit', edit_technology_path(@technology), class: 'btn btn-sm btn-outline-primary ml-5' %>
-  <%= link_to 'Delete', technology_path(@technology), method: :delete, class: 'btn btn-sm btn-outline-danger', data: { confirm: 'Are you sure?' } %>
-</p>
+<div class="tech-show mx-auto">
+  <p class="display-4 font-weight-bold">
+    <%= @technology.name %>
+    <%= link_to 'Edit', edit_technology_path(@technology), class: 'btn btn-sm btn-outline-primary ml-5 d-none d-md-inline-block' %>
+    <%= link_to 'Delete', technology_path(@technology), method: :delete, class: 'btn btn-sm btn-outline-danger d-none d-md-inline-block', data: { confirm: 'Are you sure?' } %>
+  </p>
 
-<div class="my-5">
-  <h3 class="mb-4">Appears on <%= pluralize @technology.requirements.size, 'listing' %>:</h3>
-  <% if @technology.listings.size < 1 %>
-    <p>There are no active listings requiring <%= @technology.name %> at this moment.</p>
-  <% else %>
-    <ul>
-      <% @technology.listings.each do |listing| %>
-        <li><%= link_to listing.title, listing %></li>
-      <% end %>
-    </ul>
-  <% end %>
-</div>
+  <div class="my-5">
+    <h3 class="mb-4">Appears on <%= pluralize @technology.requirements.size, 'listing' %>:</h3>
+    <% if @technology.listings.size < 1 %>
+      <p>There are no active listings requiring <%= @technology.name %> at this moment.</p>
+    <% else %>
+      <ul>
+        <% @technology.listings.each do |listing| %>
+          <li><%= link_to listing.title, listing %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
 
-<div class="my-5">
-  <h3 class="mb-4">Used by:</h3>
-  <% if @technology_companies.size < 1 %>
-    <p>There are no active listings requiring <%= @technology.name %> at this moment.</p>
-  <% else %>
-    <ul>
-      <% @technology_companies.each do |listing| %>
-        <li>
-          <%= link_to listing.company.name, listing.company %>
-        </li>
-      <% end %>
-    </ul>
-  <% end %>
+  <div class="my-5">
+    <h3 class="mb-4">Used by:</h3>
+    <% if @technology_companies.size < 1 %>
+      <p>There are no active listings requiring <%= @technology.name %> at this moment.</p>
+    <% else %>
+      <ul>
+        <% @technology_companies.each do |listing| %>
+          <li>
+            <%= link_to listing.company.name, listing.company %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+
+  <div class="d-block d-md-none text-center">
+    <%= link_to 'Edit', edit_technology_path(@technology), class: 'btn btn-sm btn-outline-primary' %>
+    <%= link_to 'Delete', technology_path(@technology), method: :delete, class: 'btn btn-sm btn-outline-danger', data: { confirm: 'Are you sure?' } %>
+  </div>
 </div>
