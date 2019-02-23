@@ -1,10 +1,12 @@
+<!-- HERO -->
 <div class="break-out jumbotron jumbotron-fluid text-center text-light bg-image">
   <h1 class="display-4 my-5">Your personal assistant to find a job</h1>
   <p class="lead">Use Job Hunt Assistant to help you find, organize and manage the job positions you are interested in.</p>
   <%= link_to 'Start now', new_user_registration_path, class: "btn btn-lg btn-outline-light mt-5 mb-5" %>
 </div>
 
-<div class="row">
+<!-- SUMMARY -->
+<div class="row" id="summary">
   <div class="col-sm">
     <div class="card text-center border-0">
       <div class="card-body">
@@ -33,5 +35,55 @@
         <p class="card-text">Easily mark positions as interested, applied, interviewed, offered / declined, unsuccessful to have an overview of the job hunt process</p>
       </div>
     </div>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div class="break-out bg-light" id="dashboard">
+  <div class="text-center p-5">
+    <h2 class="display-4">See where you stand</h2>
+    <p class="lead">Quickly glance at the most important information on your job hunting</p>
+    <%= image_tag 'jha-ss-dashboard.png', class: 'img-fluid landing-screenshot shadow' %>
+  </div>
+</div>
+
+<!-- KANBAN -->
+<div class="break-out bg-dark text-light" id="kanban">
+  <div class="row p-5 h-100">
+    <div class="col text-right my-auto">
+      <div class="d-flex flex-column align-items-stretch h-100">
+        <h2 class="display-4">Keep track</h2>
+        <p class="lead">Easily update status changes on your leads with the kanban view</p>
+      </div>
+    </div>
+
+    <div class="col">
+      <%= image_tag 'jha-ss-kanban.png', class: 'img-fluid landing-screenshot shadow' %>
+    </div>
+  </div>
+</div>
+
+<!-- COMPANY -->
+<div class="break-out bg-light" id="company">
+  <div class="row p-5 h-1--">
+    <div class="col text-right">
+      <%= image_tag 'jha-ss-company.png', class: 'img-fluid landing-screenshot shadow' %>
+    </div>
+
+    <div class="col text-left my-auto">
+      <div class="d-flex flex-column align-items-stretch h-100">
+        <h2 class="display-4">Chose right</h2>
+        <p class="lead">Add a company and see automatically filled ratings and maps, as well as the list of technologies for each company with open positions</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CALL TO ACTION -->
+<div class="break-out bg-primary text-light" id="cta">
+  <div class="text-center p-5">
+    <h2 class="display-4">Start now</h2>
+    <p class="lead m-4">Create your account for free and start hunting!</p>
+    <%= link_to 'Start now', new_user_registration_path, class: "btn btn-lg btn-outline-light mt-4 mb-4" %>
   </div>
 </div>
