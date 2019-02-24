@@ -48,6 +48,10 @@ Demo app live at [Heroku](http://hugocbp-job-hunt-assistant.herokuapp.com)
 
 ## Tests
 
+<p align="center">
+  <img src="app/assets/images/ss-coverage.png" width="90%"align="center" >
+</p>
+
 To test, run `bundle exec rspec` on the root directory.
 
 Code coverage can be seen by opening `coverage/index.html` that is generated
