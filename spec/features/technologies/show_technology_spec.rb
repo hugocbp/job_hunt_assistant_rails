@@ -1,10 +1,10 @@
-require 'rails_helper'
+require "rails_helper"
 
-describe 'Show tecnology' do
-  let(:technology) { FactoryBot.create(:technology_with_listings ) }
+RSpec.describe "Show tecnology" do
+  let(:technology) { FactoryBot.create(:technology_with_listings) }
   before(:each) { sign_in technology.user }
 
-  it 'displays the technology and its listings' do
+  it "displays the technology and its listings" do
     expect(technology.requirements.count).to eq 3
 
     visit technologies_path

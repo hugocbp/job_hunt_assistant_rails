@@ -1,9 +1,9 @@
-require 'rails_helper'
+require "rails_helper"
 
-describe 'Listing technologies' do
+RSpec.describe "Listing technologies" do
   let(:user) { FactoryBot.create(:user_with_technologies) }
-  
-  it 'shows all technologies created by the user' do
+
+  it "shows all technologies created by the user" do
     sign_in user
 
     visit technologies_url

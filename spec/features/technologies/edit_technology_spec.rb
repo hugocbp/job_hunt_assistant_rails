@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Editing a technology" do
+RSpec.describe "Editing a technology" do
   let(:user) { FactoryBot.create(:user_with_technologies, technologies_count: 1) }
   before(:each) { sign_in user }
 

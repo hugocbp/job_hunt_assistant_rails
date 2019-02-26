@@ -1,10 +1,10 @@
-require 'rails_helper'
+require "rails_helper"
 
-describe Technology do
+RSpec.describe Technology do
   let(:tech) { FactoryBot.build(:technology) }
 
-  it 'requires a name' do
-    tech.name = ''
+  it "requires a name" do
+    tech.name = ""
 
     expect(tech.valid?).to be_falsy
   end

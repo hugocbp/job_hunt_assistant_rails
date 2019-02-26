@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Showing a company" do
+RSpec.describe "Showing a company" do
   let(:user) { FactoryBot.create(:user_with_companies, companies_count: 1) }
   let(:company) { user.companies.first }
   before(:each) { sign_in user }

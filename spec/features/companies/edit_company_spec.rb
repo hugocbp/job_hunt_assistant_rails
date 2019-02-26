@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Editing a company" do
+RSpec.describe "Editing a company" do
   let(:user) { FactoryBot.create(:user_with_companies, companies_count: 1) }
   before(:each) { sign_in user }
 

@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "Creating a new listing" do
+RSpec.describe "Creating a new listing" do
   let(:user) { FactoryBot.create(:user) }
   before(:each) { sign_in user }
 
