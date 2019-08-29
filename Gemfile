@@ -32,6 +32,7 @@ group :test do
 	gem 'simplecov', require: false
 	gem 'selenium-webdriver'
 	gem 'webmock'
+	gem 'webdrivers', '~> 4.0'
 end
 
 group :development do
