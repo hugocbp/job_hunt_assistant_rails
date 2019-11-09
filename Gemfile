@@ -14,7 +14,7 @@ gem 'jbuilder', '~> 2.9.1'
 gem 'bootsnap', '>= 1.4.5', require: false
 
 # App
-gem 'devise', '4.7.0'
+gem 'devise', '4.7.1'
 gem 'faker'
 gem 'capistrano', '~> 3.11.1'
 gem 'capistrano-rails', '~> 1.4'
