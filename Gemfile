@@ -6,7 +6,7 @@ ruby '2.6.1'
 # Default
 gem 'rails', '~> 6.0.0'
 gem 'pg', '>= 0.18', '< 2.0'
-gem 'puma', '~> 4.3.3'
+gem 'puma', '~> 4.3.8'
 gem 'sass-rails', '~> 6.0.0'
 gem 'webpacker', '>= 4.0.7'
 gem 'turbolinks', '~> 5'
